@@ -120,8 +120,3 @@ Temporary Items
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
-
-
-# Public directory
-public/*
-!public/images
