@@ -1,0 +1,11 @@
+---
+layout: base
+permalink: "post/{{ page.fileSlug }}.html"
+---
+
+<article>
+  <span>{{ date | readableDate }}</span>
+  <h1>{{ title }}</h1>
+
+  {{ content | safe }}
+</article>

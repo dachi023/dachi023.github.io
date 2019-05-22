@@ -1,0 +1,23 @@
+{
+  "name": "dachi023.github.io",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "ssh://git@github.com/dachi023/dachi023.github.io.git",
+  "author": "dachi <ar.19920223@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build:css": "postcss src/styles/style.css --output public/style.min.css",
+    "build:11ty": "eleventy",
+    "watch": "yarn run build:css --watch",
+    "serve": "eleventy --serve"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@11ty/eleventy": "^0.8.3",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^2.0.3",
+    "cssnano": "^4.1.10",
+    "html-minifier": "^4.0.0",
+    "luxon": "^1.15.0",
+    "postcss-cli": "^6.1.2"
+  }
+}
