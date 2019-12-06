@@ -1,41 +1,46 @@
-import * as React from 'react'
-import Link from 'gatsby-link'
+import React from 'react'
+import { graphql } from 'gatsby'
+import { FluidObject } from 'gatsby-image'
 
-// Please note that you can use https://github.com/dotansimha/graphql-code-generator
-// to generate all types from graphQL schema
-interface IndexPageProps {
+import Layout from '../templates/Layout'
+import Profile from '../organisms/Profile'
+
+interface Props {
   data: {
+    file: {
+      childImageSharp: {
+        fluid: FluidObject
+      }
+    }
     site: {
       siteMetadata: {
+        description: string
         title: string
       }
     }
   }
 }
 
-export default class extends React.Component<IndexPageProps, {}> {
-  constructor(props: IndexPageProps, context: any) {
-    super(props, context)
-  }
-  public render() {
-    return (
-      <div>
-        <h1>Hi people</h1>
-        <p>
-          Welcome to your new{' '}
-          <strong>{this.props.data.site.siteMetadata.title}</strong> site.
-        </p>
-        <p>Now go build something great.</p>
-        <Link to="/page-2/">Go to page 2</Link>
-      </div>
-    )
-  }
+export default function IndexPage(props: Props) {
+  return (
+    <Layout description={props.data.site.siteMetadata.description} title={props.data.site.siteMetadata.title}>
+      <Profile image={props.data.file.childImageSharp.fluid} />
+    </Layout>
+  )
 }
 
 export const pageQuery = graphql`
-  query IndexQuery {
+  query {
+    file(relativePath: { eq: "programming.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 720) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
     site {
       siteMetadata {
+        description
         title
       }
     }
