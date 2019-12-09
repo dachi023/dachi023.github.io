@@ -30,7 +30,7 @@ export default function IndexPage(props: Props) {
 }
 
 export const pageQuery = graphql`
-  query {
+  query IndexPage {
     file(relativePath: { eq: "programming.png" }) {
       childImageSharp {
         fluid(maxWidth: 720) {
