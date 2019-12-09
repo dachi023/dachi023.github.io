@@ -6,11 +6,12 @@ import Helmet from 'react-helmet'
 
 import GlobalStyle from '../GlobalStyle'
 import Header from '../organisms/Header'
+import Footer from '../organisms/Footer'
 
 const Container = styled.div`
   margin: 0 auto;
   max-width: 720px;
-  padding: 1.6rem 1.2rem;
+  padding: 1.6rem 1.2rem 0;
 `
 
 interface Props {
@@ -36,6 +37,7 @@ export default function Layout(props: Props) {
       <Container>
         <Header />
         {props.children}
+        <Footer />
       </Container>
     </React.Fragment>
   )
