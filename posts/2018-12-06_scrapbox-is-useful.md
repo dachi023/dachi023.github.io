@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Scrapbox is 便利
 description: いまさらなんだけどScrapboxが便利だよぉ…ってなったのでメモ。
 date: 2018-12-06

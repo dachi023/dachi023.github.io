@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Front-end lunch \U0001F374"
 description: 今日のやったこと
 date: 2019-02-20

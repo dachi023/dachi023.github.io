@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Front-end snack \U0001F34C"
 description: 今日のやったこと
 date: 2019-02-13

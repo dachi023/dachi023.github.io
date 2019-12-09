@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Added actions tab in GitHub \U0001F419"
 description: 今日のやったこと
 date: 2018-12-07

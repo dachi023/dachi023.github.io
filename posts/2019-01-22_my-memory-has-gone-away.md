@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "My memory has gone away \U0001F4A8"
 description: 今日のやったこと
 date: 2019-01-22

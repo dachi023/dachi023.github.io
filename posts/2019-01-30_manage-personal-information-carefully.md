@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Manage personal information carefully \U0001F47C"
 description: 今日のやったこと
 date: 2019-01-30

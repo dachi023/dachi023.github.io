@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Enjoy React.Suspense & React.lazy() \U0001F43C"
 description: 今日のやったこと
 date: 2018-12-05

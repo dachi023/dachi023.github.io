@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Development settings for macOS \U0001F4BB"
 description: 今日のやったこと
 date: 2019-01-18

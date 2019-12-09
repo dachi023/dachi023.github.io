@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Year end house cleaning \U0001F64C"
 description: 今日のやったこと
 date: 2018-12-23

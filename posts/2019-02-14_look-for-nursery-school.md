@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Look for nursery school \U0001F466"
 description: 今日のやったこと
 date: 2019-02-14

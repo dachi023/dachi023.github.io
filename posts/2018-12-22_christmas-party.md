@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Christmas party \U0001F389"
 description: 今日のやったこと
 date: 2018-12-22

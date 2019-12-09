@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Japanese Toshi-wasure
 description: 今日のやったこと
 date: 2018-12-28

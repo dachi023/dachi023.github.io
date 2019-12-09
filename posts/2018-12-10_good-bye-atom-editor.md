@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Good bye Atom editor \U0001F44B"
 description: 今日のやったこと
 date: 2018-12-10

@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Progress is bad \U0001F62B"
 description: 今日のやったこと
 date: 2019-01-09

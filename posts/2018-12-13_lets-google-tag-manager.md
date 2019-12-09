@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Let’s Google Tag Manager \U0001F4AA"
 description: 今日のやったこと
 date: 2018-12-13

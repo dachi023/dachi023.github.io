@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Yaruki-switch was turned off \U0001F44B"
 description: 今日のやったこと
 date: 2019-01-16

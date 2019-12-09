@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Accept various values \U0001F4BB"
 description: 今日のやったこと
 date: 2018-12-16

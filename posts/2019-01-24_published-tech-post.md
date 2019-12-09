@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Published tech post \U0001F69B"
 description: 今日のやったこと
 date: 2019-01-24

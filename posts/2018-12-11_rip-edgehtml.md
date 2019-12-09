@@ -1,5 +1,4 @@
 ---
-layout: post
 title: RIP EdgeHTML.
 description: 今日のやったこと
 date: 2018-12-11

@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Happy new year\U0001F38D"
 description: 今日のやったこと
 date: 2019-01-07

@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Brain circuit controlling \U0001F300"
 description: 今日やったこと
 date: 2019-02-19

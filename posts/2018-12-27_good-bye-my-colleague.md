@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Good bye my colleague \U0001F44B \U0001F622"
 description: 今日のやったこと
 date: 2018-12-27

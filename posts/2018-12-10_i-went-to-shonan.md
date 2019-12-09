@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "I went to Shonan \U0001F30A"
 description: 今日のやったこと
 date: 2018-12-10

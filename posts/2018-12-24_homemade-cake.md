@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Homemade cake \U0001F384"
 description: 今日のやったこと
 date: 2018-12-24

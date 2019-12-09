@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Deploying Docker app on GAE \U0001F433"
 description: 今日のやったこと
 date: 2019-01-22

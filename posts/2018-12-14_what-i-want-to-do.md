@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "What I want to do? \U0001F914"
 description: 今日のやったこと
 date: 2018-12-14

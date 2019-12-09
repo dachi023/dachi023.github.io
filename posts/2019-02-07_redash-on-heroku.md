@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Redash on Heroku \U0001F4CA"
 description: 今日のやったこと
 date: 2019-02-07

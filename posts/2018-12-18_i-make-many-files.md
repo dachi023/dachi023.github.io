@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "I make many files \U0001F33B"
 description: 今日のやったこと
 date: 2018-12-18

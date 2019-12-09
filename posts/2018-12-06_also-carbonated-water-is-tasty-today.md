@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Also carbonated water is tasty today \U0001F60B"
 description: 今日のやったこと
 date: 2018-12-06

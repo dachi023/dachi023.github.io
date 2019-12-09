@@ -1,5 +1,4 @@
 ---
-layout: post
 title: ビジネスはとてもむずかしい
 description: 今日のやったこと
 date: 2019-03-13

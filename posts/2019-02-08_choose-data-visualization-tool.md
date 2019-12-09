@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Choose data visualization tool \U0001F46F"
 description: 今日のやったこと
 date: 2019-02-08

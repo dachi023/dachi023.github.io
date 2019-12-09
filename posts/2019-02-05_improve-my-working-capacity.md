@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Improve my working capacity \U0001F575"
 description: 今日のやったこと
 date: 2019-02-05

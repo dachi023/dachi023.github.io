@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Our JavaScript standard style \U0001F3E2"
 description: 今日のやったこと
 date: 2019-01-25

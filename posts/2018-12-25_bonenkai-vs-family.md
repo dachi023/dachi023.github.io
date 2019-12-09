@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Bonenkai vs family
 description: 今日のやったこと
 date: 2018-12-25

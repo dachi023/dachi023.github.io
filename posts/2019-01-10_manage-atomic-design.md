@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Manage “Atomic Design” \U0001F3A8"
 description: 今日のやったこと
 date: 2019-01-10

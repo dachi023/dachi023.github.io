@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "I’m depressed \U0001F922"
 description: 今日のやったこと
 date: 2019-02-18

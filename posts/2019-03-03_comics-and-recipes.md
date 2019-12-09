@@ -1,5 +1,4 @@
 ---
-layout: post
 title: 読書感想文：マンガとレシピ本
 description: 今週はきになった漫画とレシピ本を読んでみた。
 date: 2019-03-03

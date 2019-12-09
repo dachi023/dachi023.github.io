@@ -1,5 +1,4 @@
 ---
-layout: post
 title: 転職してからの3年をふりかえる
 description: コネヒト Advent Calendar 2018 Day 13
 date: 2018-12-13

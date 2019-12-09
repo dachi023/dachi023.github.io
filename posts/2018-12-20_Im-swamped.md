@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "I’m swamped \U0001F3C3"
 description: 今日のやったこと
 date: 2018-12-20

@@ -1,5 +1,4 @@
 ---
-layout: post
 title: フロントエンドで最近試したもの
 description: 今日のやったこと
 date: 2019-03-19

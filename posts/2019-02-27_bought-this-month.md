@@ -1,5 +1,4 @@
 ---
-layout: post
 title: 今月買ったものたち
 description: 2019年02月の購入履歴
 date: 2019-02-27

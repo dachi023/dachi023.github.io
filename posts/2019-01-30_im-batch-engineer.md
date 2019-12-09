@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "I’m batch engineer \U0001F5A5"
 description: 今日のやったこと
 date: 2019-01-30

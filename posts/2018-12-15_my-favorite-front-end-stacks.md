@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "My favorite front-end stacks \U0001F60D"
 description: 今日のやったこと
 date: 2018-12-15

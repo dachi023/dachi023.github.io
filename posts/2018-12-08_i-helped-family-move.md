@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "I helped family move \U0001F3E0 \U0001F468‍\U0001F469‍\U0001F467"
 description: 今日やったこと
 date: 2018-12-08

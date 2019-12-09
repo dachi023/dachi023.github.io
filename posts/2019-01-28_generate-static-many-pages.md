@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Generate static many pages \U0001F4C4"
 description: 今日のやったこと
 date: 2019-01-28

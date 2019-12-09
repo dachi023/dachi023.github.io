@@ -1,5 +1,4 @@
 ---
-layout: post
 title: '#WIP 成果とリスペクトの関係'
 description: 今日のやったこと
 date: 2019-03-07

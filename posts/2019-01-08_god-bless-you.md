@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "God bless you \U0001F637"
 description: 今日のやったこと
 date: 2019-01-08

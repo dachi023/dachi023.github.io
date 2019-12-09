@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Hand is numb \U0001F635"
 description: 今日やったこと
 date: 2019-01-12

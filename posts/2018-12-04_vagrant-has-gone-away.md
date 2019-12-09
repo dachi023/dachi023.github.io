@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Vagrant has gone away \U0001F622"
 description: 今日のやったこと
 date: 2018-12-04

@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "I’m not numbs \U0001F603"
 description: 今日のやったこと
 date: 2019-01-13

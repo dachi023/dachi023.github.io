@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Published tech blog \U0001F4DD"
 description: 今日のやったこと
 date: 2019-02-26

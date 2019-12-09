@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Front-end lunch at Shibuya \U0001F371"
 description: 今日のやったこと
 date: 2018-12-12

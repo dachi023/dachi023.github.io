@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Start “BONEN-KAI” days \U0001F37B"
 description: 今日のやったこと
 date: 2018-12-21

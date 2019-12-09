@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Tuning image size \U0001F4F1"
 description: 今日のやったこと
 date: 2018-12-17

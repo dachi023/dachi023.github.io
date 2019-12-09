@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "I’m not busy \U0001F62B"
 description: 今日のやったこと
 date: 2018-12-19

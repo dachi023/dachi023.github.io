@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "“Service design” is deep \U0001F3D7"
 description: 今日のやったこと
 date: 2019-02-25

@@ -1,5 +1,4 @@
 ---
-layout: post
 title: エンジニア求人を書くエンジニア
 description: 求人を書く際に気をつけたこと・こだわったこと
 date: 2019-04-09

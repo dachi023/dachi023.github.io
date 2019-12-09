@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "The last work day of the year \U0001F477"
 description: 今日のやったこと
 date: 2018-12-27
