@@ -20,7 +20,6 @@ interface Props {
 }
 
 export default function Layout(props: Props) {
-  console.log(props.title, props.description)
   return (
     <React.Fragment>
       <GlobalStyle />
