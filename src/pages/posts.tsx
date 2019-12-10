@@ -47,6 +47,9 @@ export const pageQuery = graphql`
           id
           rawMarkdownBody
           timeToRead
+          fields {
+            path
+          }
           frontmatter {
             date
             description

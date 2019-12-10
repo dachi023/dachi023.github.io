@@ -25,6 +25,7 @@ const Meta = styled.p`
 
 const Title = styled(Link)`
   font-size: 1.8rem;
+  font-weight: bold;
   margin-top: 0.6em;
 `
 
@@ -43,12 +44,13 @@ export default function PostList({ posts }: Props) {
       <List>
         {posts.map(
           ({ node }, index) =>
-            node.frontmatter != null && (
+            node.fields &&
+            node.frontmatter && (
               <ListItem key={index}>
                 <Meta>
                   {dayjs(node.frontmatter.date).format('MMM DD, YYYY')} - {node.timeToRead} min read
                 </Meta>
-                <Title to={`/posts/${node.id}`}>{node.frontmatter.title}</Title>
+                <Title to={node.fields.path!}>{node.frontmatter.title}</Title>
                 <Description>{node.frontmatter.description}</Description>
               </ListItem>
             )
