@@ -697,12 +697,12 @@ export type FileFieldsEnum =
   'internal___type' |
   'childMarkdownRemark___id' |
   'childMarkdownRemark___frontmatter___title' |
-  'childMarkdownRemark___frontmatter___layout' |
   'childMarkdownRemark___frontmatter___description' |
   'childMarkdownRemark___frontmatter___date' |
   'childMarkdownRemark___excerpt' |
   'childMarkdownRemark___rawMarkdownBody' |
   'childMarkdownRemark___fileAbsolutePath' |
+  'childMarkdownRemark___fields___path' |
   'childMarkdownRemark___html' |
   'childMarkdownRemark___htmlAst' |
   'childMarkdownRemark___excerptAst' |
@@ -1389,6 +1389,7 @@ export type MarkdownRemark = Node & {
   excerpt?: Maybe<Scalars['String']>,
   rawMarkdownBody?: Maybe<Scalars['String']>,
   fileAbsolutePath?: Maybe<Scalars['String']>,
+  fields?: Maybe<MarkdownRemarkFields>,
   html?: Maybe<Scalars['String']>,
   htmlAst?: Maybe<Scalars['JSON']>,
   excerptAst?: Maybe<Scalars['JSON']>,
@@ -1453,15 +1454,19 @@ export type MarkdownRemarkEdge = {
   previous?: Maybe<MarkdownRemark>,
 };
 
+export type MarkdownRemarkFields = {
+  path?: Maybe<Scalars['String']>,
+};
+
 export type MarkdownRemarkFieldsEnum = 
   'id' |
   'frontmatter___title' |
-  'frontmatter___layout' |
   'frontmatter___description' |
   'frontmatter___date' |
   'excerpt' |
   'rawMarkdownBody' |
   'fileAbsolutePath' |
+  'fields___path' |
   'html' |
   'htmlAst' |
   'excerptAst' |
@@ -1559,12 +1564,17 @@ export type MarkdownRemarkFieldsEnum =
   'internal___owner' |
   'internal___type';
 
+export type MarkdownRemarkFieldsFilterInput = {
+  path?: Maybe<StringQueryOperatorInput>,
+};
+
 export type MarkdownRemarkFilterInput = {
   id?: Maybe<StringQueryOperatorInput>,
   frontmatter?: Maybe<MarkdownRemarkFrontmatterFilterInput>,
   excerpt?: Maybe<StringQueryOperatorInput>,
   rawMarkdownBody?: Maybe<StringQueryOperatorInput>,
   fileAbsolutePath?: Maybe<StringQueryOperatorInput>,
+  fields?: Maybe<MarkdownRemarkFieldsFilterInput>,
   html?: Maybe<StringQueryOperatorInput>,
   htmlAst?: Maybe<JsonQueryOperatorInput>,
   excerptAst?: Maybe<JsonQueryOperatorInput>,
@@ -1579,7 +1589,6 @@ export type MarkdownRemarkFilterInput = {
 
 export type MarkdownRemarkFrontmatter = {
   title?: Maybe<Scalars['String']>,
-  layout?: Maybe<Scalars['String']>,
   description?: Maybe<Scalars['String']>,
   date?: Maybe<Scalars['Date']>,
 };
@@ -1594,7 +1603,6 @@ export type MarkdownRemarkFrontmatterDateArgs = {
 
 export type MarkdownRemarkFrontmatterFilterInput = {
   title?: Maybe<StringQueryOperatorInput>,
-  layout?: Maybe<StringQueryOperatorInput>,
   description?: Maybe<StringQueryOperatorInput>,
   date?: Maybe<DateQueryOperatorInput>,
 };
@@ -1697,6 +1705,7 @@ export type QueryMarkdownRemarkArgs = {
   excerpt?: Maybe<StringQueryOperatorInput>,
   rawMarkdownBody?: Maybe<StringQueryOperatorInput>,
   fileAbsolutePath?: Maybe<StringQueryOperatorInput>,
+  fields?: Maybe<MarkdownRemarkFieldsFilterInput>,
   html?: Maybe<StringQueryOperatorInput>,
   htmlAst?: Maybe<JsonQueryOperatorInput>,
   excerptAst?: Maybe<JsonQueryOperatorInput>,
@@ -1898,6 +1907,7 @@ export type QuerySitePageArgs = {
   component?: Maybe<StringQueryOperatorInput>,
   componentChunkName?: Maybe<StringQueryOperatorInput>,
   isCreatedByStatefulCreatePages?: Maybe<BooleanQueryOperatorInput>,
+  context?: Maybe<SitePageContextFilterInput>,
   pluginCreator?: Maybe<SitePluginFilterInput>,
   pluginCreatorId?: Maybe<StringQueryOperatorInput>,
   componentPath?: Maybe<StringQueryOperatorInput>
@@ -2087,6 +2097,7 @@ export type SitePage = Node & {
   component?: Maybe<Scalars['String']>,
   componentChunkName?: Maybe<Scalars['String']>,
   isCreatedByStatefulCreatePages?: Maybe<Scalars['Boolean']>,
+  context?: Maybe<SitePageContext>,
   pluginCreator?: Maybe<SitePlugin>,
   pluginCreatorId?: Maybe<Scalars['String']>,
   componentPath?: Maybe<Scalars['String']>,
@@ -2111,6 +2122,14 @@ export type SitePageConnectionGroupArgs = {
   skip?: Maybe<Scalars['Int']>,
   limit?: Maybe<Scalars['Int']>,
   field: SitePageFieldsEnum
+};
+
+export type SitePageContext = {
+  id?: Maybe<Scalars['String']>,
+};
+
+export type SitePageContextFilterInput = {
+  id?: Maybe<StringQueryOperatorInput>,
 };
 
 export type SitePageEdge = {
@@ -2211,6 +2230,7 @@ export type SitePageFieldsEnum =
   'component' |
   'componentChunkName' |
   'isCreatedByStatefulCreatePages' |
+  'context___id' |
   'pluginCreator___id' |
   'pluginCreator___parent___id' |
   'pluginCreator___parent___parent___id' |
@@ -2299,6 +2319,7 @@ export type SitePageFilterInput = {
   component?: Maybe<StringQueryOperatorInput>,
   componentChunkName?: Maybe<StringQueryOperatorInput>,
   isCreatedByStatefulCreatePages?: Maybe<BooleanQueryOperatorInput>,
+  context?: Maybe<SitePageContextFilterInput>,
   pluginCreator?: Maybe<SitePluginFilterInput>,
   pluginCreatorId?: Maybe<StringQueryOperatorInput>,
   componentPath?: Maybe<StringQueryOperatorInput>,
@@ -2648,7 +2669,25 @@ export type StringQueryOperatorInput = {
   glob?: Maybe<Scalars['String']>,
 };
 
-export type Unnamed_1_QueryVariables = {};
+export type IndexPageQueryVariables = {};
 
 
-export type Unnamed_1_Query = { file: Maybe<{ childImageSharp: Maybe<{ fluid: Maybe<> }> }>, site: Maybe<{ siteMetadata: Maybe<Pick<SiteSiteMetadata, 'description' | 'title'>> }> };
+export type IndexPageQuery = { file: Maybe<{ childImageSharp: Maybe<{ fluid: Maybe<> }> }>, site: Maybe<{ siteMetadata: Maybe<Pick<SiteSiteMetadata, 'description' | 'title'>> }> };
+
+export type PostsPageQueryQueryVariables = {};
+
+
+export type PostsPageQueryQuery = { allMarkdownRemark: { edges: Array<{ node: (
+        Pick<MarkdownRemark, 'id' | 'rawMarkdownBody' | 'timeToRead'>
+        & { fields: Maybe<Pick<MarkdownRemarkFields, 'path'>>, frontmatter: Maybe<Pick<MarkdownRemarkFrontmatter, 'date' | 'description' | 'title'>> }
+      ) }> }, file: Maybe<{ childImageSharp: Maybe<{ fluid: Maybe<> }> }>, site: Maybe<{ siteMetadata: Maybe<Pick<SiteSiteMetadata, 'description' | 'title'>> }> };
+
+export type PostPageQueryQueryVariables = {
+  id: Scalars['String']
+};
+
+
+export type PostPageQueryQuery = { markdownRemark: Maybe<(
+    Pick<MarkdownRemark, 'id' | 'html' | 'timeToRead'>
+    & { fields: Maybe<Pick<MarkdownRemarkFields, 'path'>>, frontmatter: Maybe<Pick<MarkdownRemarkFrontmatter, 'date' | 'description' | 'title'>> }
+  )>, site: Maybe<{ siteMetadata: Maybe<Pick<SiteSiteMetadata, 'description'>> }> };
