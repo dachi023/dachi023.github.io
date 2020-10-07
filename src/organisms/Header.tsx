@@ -44,9 +44,6 @@ export default function Header() {
         <nav>
           <Menu>
             <MenuItem>
-              <MenuLink to="/">About</MenuLink>
-            </MenuItem>
-            <MenuItem>
               <MenuLink to="/posts">Posts</MenuLink>
             </MenuItem>
           </Menu>
