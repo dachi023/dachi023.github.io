@@ -27,6 +27,7 @@ const Body = styled.div`
     width: 100%;
   }
   p {
+    line-height: 1.6em;
     margin-top: 0.9em;
   }
   ul {
