@@ -28,8 +28,8 @@ export default function Layout(props: Props) {
         link={[
           {
             href: 'https://fonts.googleapis.com/css?family=Noto+Sans+JP|Pacifico&display=swap',
-            rel: 'stylesheet'
-          }
+            rel: 'stylesheet',
+          },
         ]}
         meta={[{ name: 'description', content: props.description || '' }]}
         title={props.title || 'dachi.work'}
