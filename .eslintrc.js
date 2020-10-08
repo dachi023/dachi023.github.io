@@ -1,54 +1,25 @@
 module.exports = {
+  extends: ['@connehito', 'plugin:import/errors'],
+  plugins: ['@typescript-eslint'],
   env: {
-    browser: true,
     es6: true,
-    node: true
   },
-  globals: {
-    ga: 'readonly'
-  },
-  parser: '@typescript-eslint/parser',
   parserOptions: {
-    sourceType: 'module',
-    ecmaVersion: 2018,
-    ecmaFeatures: {
-      'jsx': true
-    }
-  },
-  plugins: ['@typescript-eslint', 'import', 'prettier', 'react'],
-  extends: [
-    'eslint:recommended',
-    'plugin:import/typescript',
-    'plugin:prettier/recommended',
-    'plugin:react/recommended',
-    'prettier',
-    'prettier/@typescript-eslint',
-    'prettier/react'
-  ],
-  settings: {
-    react: {
-      version: 'detect'
-    }
+    project: './tsconfig.json',
   },
   rules: {
-    '@typescript-eslint/adjacent-overload-signatures': 'error',
     '@typescript-eslint/no-unused-vars': 'error',
+    'import/order': ['error', { alphabetize: { order: 'asc' } }],
+    'import/no-unresolved': 'off',
     'no-unused-vars': 'off',
-    'prettier/prettier': [
-      2,
-      {
-        printWidth: 120,
-        semi: false,
-        singleQuote: true
-      }
-    ]
+    'sort-imports': 'off',
   },
   overrides: [
     {
-      env: {
-        jest: true
+      files: ['**/*.tsx'],
+      rules: {
+        'react/prop-types': 'off',
       },
-      files: ['*.test.ts', '*.test.tsx']
-    }
-  ]
+    },
+  ],
 }
