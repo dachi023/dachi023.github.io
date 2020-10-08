@@ -1,12 +1,12 @@
 import 'ress'
 
 import React from 'react'
-import styled from 'styled-components'
 import Helmet from 'react-helmet'
+import styled from 'styled-components'
 
 import GlobalStyle from '../GlobalStyle'
-import Header from '../organisms/Header'
 import Footer from '../organisms/Footer'
+import Header from '../organisms/Header'
 
 const Container = styled.div`
   margin: 0 auto;

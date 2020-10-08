@@ -1,62 +1,55 @@
 import React from 'react'
-import { FaGithub, FaSpeakerDeck, FaTwitter } from 'react-icons/fa'
 import styled from 'styled-components'
 
 import Emoji from '../atoms/Emoji'
-import Heading from '../atoms/Heading'
 
-const Biography = styled.div`
-  width: auto;
+const Content = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 3em;
 `
 
-const List = styled.ul`
-  margin-top: 0.3em;
+const Item = styled.li`
+  font-size: 1.4rem;
+  padding: 0.2em 0;
 `
 
-const ListItem = styled.li`
-  font-size: 1.2rem;
+const LabeledEmoji = styled(Emoji)`
+  margin-right: 1.1em;
 `
 
-const Icon = styled.a`
-  margin-left: 0.9em;
-  &:first-child {
-    margin: 0;
-  }
+const Career = styled.p`
+  color: #777;
+  font-size: 1rem;
+  letter-spacing: 0.1rem;
+  line-height: 1.8em;
+  margin: 3em 1em 0;
 `
 
 export default function Profile() {
   return (
-    <Biography>
-      <Heading>About me</Heading>
-      <List>
-        <ListItem>
-          <Emoji symbol="📛" /> Ryo Adachi
-        </ListItem>
-        <ListItem>
-          <Emoji symbol="📍" /> Tokyo, Japan
-        </ListItem>
-        <ListItem>
-          <Emoji symbol="👨‍💻" /> FE developer
-        </ListItem>
-        <ListItem>
-          <Emoji symbol="🏢" /> Connehito Inc.
-        </ListItem>
-      </List>
+    <Content>
+      <ul>
+        <Item>
+          <LabeledEmoji symbol="📛" /> Ryo Adachi
+        </Item>
+        <Item>
+          <LabeledEmoji symbol="👨‍💻" /> Lead Engineer
+        </Item>
+        <Item>
+          <LabeledEmoji symbol="🏢" /> Connehito Inc.
+        </Item>
+        <Item>
+          <LabeledEmoji symbol="📍" /> Tokyo, Japan
+        </Item>
+      </ul>
 
-      <Heading>Links</Heading>
-      <List>
-        <ListItem>
-          <Icon href="https://github.com/dachi023" rel="noopener" target="_blank">
-            <FaGithub size="1.5rem" />
-          </Icon>
-          <Icon href="https://twitter.com/dachi_023" rel="noopener" target="_blank">
-            <FaTwitter size="1.5rem" />
-          </Icon>
-          <Icon href="https://speakerdeck.com/dachi023" rel="noopener" target="_blank">
-            <FaSpeakerDeck size="1.5rem" />
-          </Icon>
-        </ListItem>
-      </List>
-    </Biography>
+      <Career>
+        2012年にSIerに新卒で入社、EdTech関連事業や大手ECサービスのWeb開発やiOSアプリなどの開発を経験。
+        2016年からはコネヒト株式会社にWebアプリケーションエンジニアとして入社し、女性向けメディア・アプリ「ママリ」のWeb開発を担当。
+        現在はリードエンジニアとして組織の技術面でのサポートやチーム開発における開発効率の改善などを推進。
+      </Career>
+    </Content>
   )
 }

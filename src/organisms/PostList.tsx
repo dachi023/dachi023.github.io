@@ -1,7 +1,7 @@
-import React from 'react'
 import dayjs from 'dayjs'
-import styled from 'styled-components'
 import Link from 'gatsby-link'
+import React from 'react'
+import styled from 'styled-components'
 
 import { MarkdownRemarkEdge } from '../../types/graphql-types'
 

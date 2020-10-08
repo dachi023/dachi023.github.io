@@ -1,11 +1,10 @@
+import Link from 'gatsby-link'
 import React from 'react'
 import styled from 'styled-components'
-import Link from 'gatsby-link'
 
-const Container = styled.div`
+const Content = styled.div`
   display: flex;
-  justify-content: space-between;
-  align-items: baseline;
+  justify-content: center;
 `
 
 const Title = styled.h1`
@@ -20,35 +19,40 @@ const TitleLink = styled(Link)`
 
 const Menu = styled.ul`
   display: flex;
+  justify-content: center;
 `
 
 const MenuItem = styled.li`
-  margin-left: 0.9em;
+  margin-left: 1.4em;
   &:first-child {
-    margin: 0;
+    margin-left: 0;
   }
 `
 
 const MenuLink = styled(Link)`
-  color: #130f40;
+  font-size: 1.2rem;
+  font-weight: bold;
   text-decoration: none;
 `
 
 export default function Header() {
   return (
     <header>
-      <Container>
+      <Content>
         <Title>
           <TitleLink to="/">dachi.work</TitleLink>
         </Title>
-        <nav>
-          <Menu>
-            <MenuItem>
-              <MenuLink to="/posts">Posts</MenuLink>
-            </MenuItem>
-          </Menu>
-        </nav>
-      </Container>
+      </Content>
+      <nav>
+        <Menu>
+          <MenuItem>
+            <MenuLink to="/posts">Posts</MenuLink>
+          </MenuItem>
+          {/* <MenuItem>
+            <MenuLink to="/works">Works</MenuLink>
+          </MenuItem> */}
+        </Menu>
+      </nav>
     </header>
   )
 }

@@ -1,11 +1,11 @@
+import { graphql } from 'gatsby'
+import Image, { FluidObject } from 'gatsby-image'
 import React from 'react'
 import styled from 'styled-components'
-import Image, { FluidObject } from 'gatsby-image'
-import { graphql } from 'gatsby'
 
-import Layout from '../templates/Layout'
-import PostList from '../organisms/PostList'
 import { MarkdownRemarkConnection } from '../../types/graphql-types'
+import PostList from '../organisms/PostList'
+import Layout from '../templates/Layout'
 
 const Illust = styled.div`
   width: 100%;

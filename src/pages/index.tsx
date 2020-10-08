@@ -1,22 +1,16 @@
-import React from 'react'
 import { graphql } from 'gatsby'
-import Image, { FluidObject } from 'gatsby-image'
+import React from 'react'
 import styled from 'styled-components'
 
-import Layout from '../templates/Layout'
 import Profile from '../organisms/Profile'
+import Layout from '../templates/Layout'
 
-const Illust = styled.div`
-  width: 100%;
+const Content = styled.div`
+  margin-top: 1.4em;
 `
 
 interface Props {
   data: {
-    file: {
-      childImageSharp: {
-        fluid: FluidObject
-      }
-    }
     site: {
       siteMetadata: {
         description: string
@@ -29,23 +23,15 @@ interface Props {
 export default function IndexPage(props: Props) {
   return (
     <Layout description={props.data.site.siteMetadata.description} title={props.data.site.siteMetadata.title}>
-      <Illust>
-        <Image fluid={props.data.file.childImageSharp.fluid} />
-      </Illust>
-      <Profile />
+      <Content>
+        <Profile />
+      </Content>
     </Layout>
   )
 }
 
 export const pageQuery = graphql`
   query IndexPage {
-    file(relativePath: { eq: "welcome.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 720) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
     site {
       siteMetadata {
         description

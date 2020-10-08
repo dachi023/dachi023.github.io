@@ -1,9 +1,9 @@
+import { graphql } from 'gatsby'
 import React from 'react'
 import styled from 'styled-components'
-import { graphql } from 'gatsby'
 
-import Layout from '../../templates/Layout'
 import { MarkdownRemark } from '../../../types/graphql-types'
+import Layout from '../../templates/Layout'
 
 const Container = styled.div`
   margin-top: 3.3em;
