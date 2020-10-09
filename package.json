@@ -57,11 +57,13 @@
   "scripts": {
     "build": "gatsby build --prefix-paths",
     "clean": "gatsby clean",
-    "deploy": "run-s clean build && cp CNAME ./public/CNAME && gh-pages -d ./public",
+    "copy:cname": "cp CNAME ./public/CNAME",
+    "deploy": "run-s clean build copy:cname publish",
     "format": "eslint ./src --ext .ts,.tsx --fix",
     "lint": "run-p lint:*",
     "lint:eslint": "eslint ./src --ext .ts,.tsx",
     "lint:ts": "tsc --noEmit",
+    "publish": "gh-pages -d ./public",
     "serve": "gatsby serve",
     "start": "gatsby develop"
   }
