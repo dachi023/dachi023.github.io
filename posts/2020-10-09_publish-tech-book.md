@@ -4,7 +4,7 @@ description: 共著として執筆した技術書がこのたび出版されま�
 date: 2020-10-09
 ---
 
-![image_1](https://www.dropbox.com/s/zmd31ua5z1gpkec/2020-10-09_01.jpg?dl=1)
+![image_1](/images/posts/2020-10-09_01.jpg)
 
 2020/10/9 に秀和システム様から「フロントエンド開発入門」というタイトルの技術書を出版させていただきます。本書籍は mediba の武田さん ([@tkdn](https://twitter.com/tkdn)) との共著です。
 
