@@ -52,7 +52,7 @@ export default function PostPage(props: Props) {
   return (
     props.data.markdownRemark.frontmatter && (
       <Layout
-        description={props.data.site.siteMetadata.description}
+        description={props.data.markdownRemark.frontmatter.description || props.data.site.siteMetadata.description}
         title={props.data.markdownRemark.frontmatter.title!}
       >
         <Container>
