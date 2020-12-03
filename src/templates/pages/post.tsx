@@ -6,7 +6,13 @@ import { MarkdownRemark } from '../../../types/graphql-types'
 import Layout from '../../templates/Layout'
 
 const Container = styled.div`
-  margin-top: 3.3em;
+  margin-top: 3em;
+`
+
+const Title = styled.h1`
+  font-size: 1.8rem;
+  font-weight: 800;
+  text-align: center;
 `
 
 const Body = styled.div`
@@ -57,6 +63,7 @@ export default function PostPage(props: Props) {
       >
         <Container>
           <article>
+            <Title>{props.data.markdownRemark.frontmatter.title}</Title>
             <Body dangerouslySetInnerHTML={{ __html: props.data.markdownRemark.html! }} />
           </article>
         </Container>

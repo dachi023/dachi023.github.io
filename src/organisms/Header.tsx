@@ -7,7 +7,7 @@ const Content = styled.div`
   justify-content: center;
 `
 
-const Title = styled.h1`
+const Title = styled.p`
   font-family: 'Pacifico', cursive;
   font-size: 2.2rem;
 `
