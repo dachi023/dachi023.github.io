@@ -56,5 +56,56 @@ module.exports = {
     'gatsby-plugin-typescript',
     'gatsby-transformer-remark',
     'gatsby-transformer-sharp',
+    {
+      resolve: 'gatsby-plugin-feed',
+      options: {
+        query: `
+          {
+            site {
+              siteMetadata {
+                title
+                description
+                siteUrl
+              }
+            }
+          }
+        `,
+        feeds: [
+          {
+            serialize: ({ query: { site, allMarkdownRemark } }) => {
+              return allMarkdownRemark.edges.map(({ node }) => ({
+                title: node.frontmatter.title,
+                description: node.frontmatter.description,
+                date: node.frontmatter.date,
+                url: site.siteMetadata.siteUrl + node.fields.path,
+                guid: site.siteMetadata.siteUrl + node.fields.path,
+              }))
+            },
+            query: `
+              {
+                allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
+                  edges {
+                    node {
+                      fields {
+                        path
+                      }
+                      frontmatter {
+                        title
+                        description
+                        date
+                      }
+                    }
+                  }
+                }
+              }
+            `,
+            output: '/posts/rss.xml',
+            title: 'dachi.work RSS feed',
+            feed_url: `${siteUrl}/posts/rss.xml`,
+            site_url: `${siteUrl}/posts`,
+          },
+        ],
+      },
+    },
   ]
 }
