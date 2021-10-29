@@ -13,6 +13,9 @@ const GlobalStyle = createGlobalStyle`
   ul, ol {
     list-style: none;
   }
+  hr {
+    margin: 1.8rem 0;
+  }
 `
 
 export default GlobalStyle
