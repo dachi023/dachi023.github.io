@@ -16,10 +16,8 @@ export default function Home() {
         <meta property="og:locale" content="ja_JP" />
       </Head>
 
-      <main className="px-16 bg-[#F5F5DC] min-w-full min-h-screen">
-        <h1 className="pt-12 font-pacifico text-5xl">dachi</h1>
-
-        <div className="mt-16 flex flex-col gap-12">
+      <main>
+        <div className="flex flex-col gap-12">
           <section className="flex items-center gap-6">
             <div
               className="basis-12 w-12 h-12"
