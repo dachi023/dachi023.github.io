@@ -1,2 +1,0 @@
-(self.webpackChunkdachi023_github_io=self.webpackChunkdachi023_github_io||[]).push([[218],{938:function(e,t,u){"use strict";u.r(t);var n=u(7294);t.default=function(){return n.createElement("div",null,n.createElement("h1",null,"NOT FOUND"),n.createElement("p",null,"You just hit a route that doesn't exist... the sadness."))}}}]);
-//# sourceMappingURL=component---src-pages-404-tsx-3a10edbfedf2672cb145.js.map
