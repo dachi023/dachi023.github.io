@@ -1,7 +1,7 @@
 {
   "name": "dachi023.github.io",
-  "version": "0.1.0",
   "private": true,
+  "license": "UNLICENSED",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -13,6 +13,7 @@
     "@types/react": "18.0.35",
     "@types/react-dom": "18.0.11",
     "autoprefixer": "10.4.14",
+    "classnames": "2.3.2",
     "eslint": "8.38.0",
     "eslint-config-next": "13.3.0",
     "next": "13.3.0",
@@ -20,6 +21,7 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "tailwindcss": "3.3.1",
+    "twemoji": "14.0.2",
     "typescript": "5.0.4"
   }
 }
