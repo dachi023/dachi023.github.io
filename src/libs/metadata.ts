@@ -55,7 +55,7 @@ export function createMetadata(
     description: "",
     path: "",
   },
-  rest: Partial<Metadata> = {}
+  rest: Partial<Metadata> = {},
 ): Metadata {
   const url = path ? `${baseUrl}/${path}` : baseUrl;
   const metadata: Metadata = {

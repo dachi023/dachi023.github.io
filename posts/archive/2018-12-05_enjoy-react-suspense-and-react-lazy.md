@@ -17,14 +17,14 @@ date: 2018-12-05
 
 [昨日の投稿](https://medium.com/@dachi/154edabf6696)にも書いたけど今日になってさらに「んで、Reactユーザとして何すればいいんだっけ〜」を理解したかったので読み直してみた。
 
-*   16.6: Suspenseを利用したコード分割  
-    `React.lazy()` によるComponentのDynamic importが使える。  
-    `[@babel/plugin-syntax-dynamic-import](https://www.npmjs.com/package/@babel/plugin-syntax-dynamic-import)` 入れれば動く。
-*   16.x: Hooksの追加  
-    このあたりからClass構文のComponentを減らす努力をして行きたい。
-*   16.x: Concurrent Mode  
-    Time Slicingって呼んでたやつ？Componentの描画がメインスレッドをブロックしないので操作がスムーズなのかい？ちゃんと理解してない。
-*   16.x: Suspense for Data Fetching  
-    `react-cache` の説明がここから出てきてる。  
-    fetch & cacheを基本形としてデータ取得するサンプルが書いてある。  
-    Suspenseの実戦的な使い方、って感じがある。
+- 16.6: Suspenseを利用したコード分割  
+  `React.lazy()` によるComponentのDynamic importが使える。  
+  `[@babel/plugin-syntax-dynamic-import](https://www.npmjs.com/package/@babel/plugin-syntax-dynamic-import)` 入れれば動く。
+- 16.x: Hooksの追加  
+  このあたりからClass構文のComponentを減らす努力をして行きたい。
+- 16.x: Concurrent Mode  
+  Time Slicingって呼んでたやつ？Componentの描画がメインスレッドをブロックしないので操作がスムーズなのかい？ちゃんと理解してない。
+- 16.x: Suspense for Data Fetching  
+  `react-cache` の説明がここから出てきてる。  
+  fetch & cacheを基本形としてデータ取得するサンプルが書いてある。  
+  Suspenseの実戦的な使い方、って感じがある。

@@ -14,10 +14,10 @@ date: 2018-12-13
 
 ### **2016年のかわったこと**
 
-*   Gruntとgulpをやめてwebpackにした
-*   コーディング規約を廃止してESLintを入れた
-*   jQueryとBackboneをやめてReactを使い始めた
-*   個人開発で[docbase-js](https://github.com/dachi023/docbase-js)をつくった
+- Gruntとgulpをやめてwebpackにした
+- コーディング規約を廃止してESLintを入れた
+- jQueryとBackboneをやめてReactを使い始めた
+- 個人開発で[docbase-js](https://github.com/dachi023/docbase-js)をつくった
 
 個人的にはwebpackにしたこと、Reactを使い始めたことが最も今に活きてるかな〜と思ってます。webpackにしたことでファイルを分割してimport/exportができるようになったのが当時はインパクト大だったのと (今となっては普通ですが)、MVCでwebの実装をしていたところがFluxというデータの扱いに長けたアーキテクチャになったことでjQuery (Backbone) で辛かった部分が一気に解消されました。また、この辺から最近のJSぽさ (ES2015〜) が感じられるようになってきました。
 
@@ -25,12 +25,12 @@ date: 2018-12-13
 
 ### 2017年のかわったこと
 
-*   社内にES2015やReactが浸透し始める
-*   React勉強会やSlack上でJS相談会などを開催した
-*   知見を社内共有サービスでメモとして書きまくった
-*   Reactを本格的にProduction環境に投入
-*   型が欲しくなってFlowを一部アプリケーションで導入した
-*   Golangをやってみた
+- 社内にES2015やReactが浸透し始める
+- React勉強会やSlack上でJS相談会などを開催した
+- 知見を社内共有サービスでメモとして書きまくった
+- Reactを本格的にProduction環境に投入
+- 型が欲しくなってFlowを一部アプリケーションで導入した
+- Golangをやってみた
 
 2016に仕込んだものが馴染んでいく年だったような気がします。2016ほど大胆な変更は入れてませんが変化を組織で受け入れる、そんな感じです。とはいえ、ReactでつくったものがProduction環境でデビューしたり、JSにも静的型付けの世界がやってきたりとそれなりに進展はあった年でした。
 
@@ -38,12 +38,12 @@ date: 2018-12-13
 
 ### 2018年のかわったこと
 
-*   社内エンジニア・デザイナー向けweb開発フローを整備
-*   [@connehito/eslint-config](https://www.npmjs.com/package/@connehito/eslint-config)を公開した
-*   [Storybook](https://storybook.js.org/)を導入した
-*   弊社フロントエンドエンジニアが2名になった 🎉
-*   Dockerをちょっと理解した
-*   medibaさんの[フロントエンドランチ](https://scrapbox.io/mediba/)に参加 (準レギュラー)
+- 社内エンジニア・デザイナー向けweb開発フローを整備
+- [@connehito/eslint-config](https://www.npmjs.com/package/@connehito/eslint-config)を公開した
+- [Storybook](https://storybook.js.org/)を導入した
+- 弊社フロントエンドエンジニアが2名になった 🎉
+- Dockerをちょっと理解した
+- medibaさんの[フロントエンドランチ](https://scrapbox.io/mediba/)に参加 (準レギュラー)
 
 手を動かすことは続けながらも、インプットすることに重きをおいた1年でした。インプット量を増やしていらないものは削って、を繰り返して整えてました。おかげでだいぶ情報を拾えるようになったはず。
 

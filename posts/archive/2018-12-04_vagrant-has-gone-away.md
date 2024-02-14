@@ -20,7 +20,7 @@ $ brew cask upgrade vagrant vagrant-manager
 ### JSer.infoを読んだ
 
 [**2018-12-04のJS: TypeScript 3.2、React 16.xロードマップ、ESLintのビルトインJSDocサポート終了の予定**  
-_JSer.info #412 - TypeScript 3.2が正式にリリースされました。_jser.info](https://jser.info/2018/12/04/typescript-3.2react-16.xeslintjsdoc/ "https://jser.info/2018/12/04/typescript-3.2react-16.xeslintjsdoc/")[](https://jser.info/2018/12/04/typescript-3.2react-16.xeslintjsdoc/)
+\_JSer.info #412 - TypeScript 3.2が正式にリリースされました。\_jser.info](https://jser.info/2018/12/04/typescript-3.2react-16.xeslintjsdoc/ "https://jser.info/2018/12/04/typescript-3.2react-16.xeslintjsdoc/")[](https://jser.info/2018/12/04/typescript-3.2react-16.xeslintjsdoc/)
 
 Reactに関する記事
 

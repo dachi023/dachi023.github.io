@@ -11,8 +11,8 @@ Photo by [Rémi Walle](https://unsplash.com/@walre037?utm_source=medium&utm_medi
 
 ## なぜエンジニアが求人を書くのか？
 
-*   エンジニアの方が現場をよく知っている
-*   一緒に働きたい人を求人を通して伝えられる
+- エンジニアの方が現場をよく知っている
+- 一緒に働きたい人を求人を通して伝えられる
 
 この2つが私の考える、エンジニアが求人を書く主なメリットです。特に2つ目に関しては応募者が事前に「私はこの会社とマッチしそうか」と判断する際に非常に大事なところになってくるので必ず書くようにしています。
 
@@ -36,12 +36,12 @@ Photo by [Rémi Walle](https://unsplash.com/@walre037?utm_source=medium&utm_medi
 ## 参考にした求人や記事など
 
 [**The Great Divide | CSS-Tricks**  
-_Let's say there is a divide happening in front-end development. I feel it, but it's not just in my bones. Based on an…_css-tricks.com](https://css-tricks.com/the-great-divide/ "https://css-tricks.com/the-great-divide/")[](https://css-tricks.com/the-great-divide/)
+\_Let's say there is a divide happening in front-end development. I feel it, but it's not just in my bones. Based on an…\_css-tricks.com](https://css-tricks.com/the-great-divide/ "https://css-tricks.com/the-great-divide/")[](https://css-tricks.com/the-great-divide/)
 
 最近の ”フロントエンド” にはいろんなスキルが含まれていて一言では片付けられないよね、というようなことが書かれている記事です。UIをつくるのか、UXを向上させるのか、それともBFFとかやるのか…。やることは多岐に渡るけど求人はフロントエンドで一括りにしてしまっている状態は良くない、それぞれをちゃんと明記した方がいいなと改めて思いました。
 
 [**Figma - Software Engineer**  
-_At Figma, we tackle a wide range of technical challenges: from designing powerful but accessible features in a complex…_jobs.lever.co](https://jobs.lever.co/figma/727be887-fa16-45fa-93a0-c5e14510a079 "https://jobs.lever.co/figma/727be887-fa16-45fa-93a0-c5e14510a079")[](https://jobs.lever.co/figma/727be887-fa16-45fa-93a0-c5e14510a079)
+\_At Figma, we tackle a wide range of technical challenges: from designing powerful but accessible features in a complex…\_jobs.lever.co](https://jobs.lever.co/figma/727be887-fa16-45fa-93a0-c5e14510a079 "https://jobs.lever.co/figma/727be887-fa16-45fa-93a0-c5e14510a079")[](https://jobs.lever.co/figma/727be887-fa16-45fa-93a0-c5e14510a079)
 
 各項目が箇条書きで分かりやすく書いてあって好きです。実際にどんな業務をするのかも簡潔ですがだいたいイメージがつきます (本当はこれくらいシンプルにかっこよく伝えられる文章を書きたかった)。
 
@@ -50,6 +50,6 @@ _At Figma, we tackle a wide range of technical challenges: from designing powerf
 というわけで以下がそれらを反映した求人になります。読んでみてもし気になる点などあれば勝手にお祈りとかしないので、まずは気軽にお茶でもしましょう 🍵 🐼
 
 [**パパも大活躍！！ママリのwebフロントエンドを支えるエンジニア募集！ by コネヒト株式会社**  
-_コネヒト株式会社のWeb エンジニアの転職・採用情報。Wantedlyでは、働くモチベーションや一緒に働くメンバーについて知ることができます。コネヒトでは個人で開発するということはほとんどなく、少人数でチームを組み開発を進めています。…_www.wantedly.com](https://www.wantedly.com/projects/300133 "https://www.wantedly.com/projects/300133")[](https://www.wantedly.com/projects/300133)
+\_コネヒト株式会社のWeb エンジニアの転職・採用情報。Wantedlyでは、働くモチベーションや一緒に働くメンバーについて知ることができます。コネヒトでは個人で開発するということはほとんどなく、少人数でチームを組み開発を進めています。…\_www.wantedly.com](https://www.wantedly.com/projects/300133 "https://www.wantedly.com/projects/300133")[](https://www.wantedly.com/projects/300133)
 
 お待ちしています 👋

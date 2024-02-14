@@ -14,12 +14,12 @@ date: 2018-12-21
 今回はReactで書いたwebアプリケーション上で新しく登録されたデータをどんどんページ上部に表示したいのでこんな感じで実装した。
 
 componentDidMount() {  
-  this.citiesRef = db.collection('cities')  
-  this.citiesRef.orderBy('created', 'desc').onSnapshot(snapshot => {  
-    const cities = \[\]  
-    snapshot.forEach(doc => cities.push(doc.data().name))  
-    this.setState({ cities: cities.concat(this.state.cities) })  
-  })  
+ this.citiesRef = db.collection('cities')  
+ this.citiesRef.orderBy('created', 'desc').onSnapshot(snapshot => {  
+ const cities = \[\]  
+ snapshot.forEach(doc => cities.push(doc.data().name))  
+ this.setState({ cities: cities.concat(this.state.cities) })  
+ })  
 }
 
 たったこれだけのコードでListenしてくれるってことにも感動だし、普通に考えたら面倒な実装をデフォでやってくれているのが嬉しい。これだけのためにFirestore使ってるまであるな…とか思った。

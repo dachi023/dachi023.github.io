@@ -1,7 +1,6 @@
+import { getAllPosts } from "@/libs/post";
 import dayjs from "dayjs";
 import Link from "next/link";
-
-import { getAllPosts } from "@/libs/post";
 
 export default async function Home() {
   const posts = await getAllPosts();
@@ -11,7 +10,7 @@ export default async function Home() {
       <div className="flex flex-col gap-12">
         <section>
           <h2 className="text-lg font-medium">作者について</h2>
-          <div className="mt-6 text-base flex flex-col gap-6 leading-8">
+          <div className="mt-6 flex flex-col gap-6 text-base leading-8">
             <p>
               Ryo
               Adachiもしくはdachi(dachi023)というハンドルネームでネット上での発信をしています。
@@ -19,7 +18,7 @@ export default async function Home() {
             <p>
               2012年からウェブエンジニアとして働いており、現在は
               <a
-                className="underline text-primary"
+                className="text-primary underline"
                 href="https://corp.mosh.jp/"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -33,10 +32,10 @@ export default async function Home() {
 
         <section>
           <h2 className="text-lg font-medium">活動実績</h2>
-          <div className="mt-6 text-base flex flex-col gap-6">
+          <div className="mt-6 flex flex-col gap-6 text-base">
             <p>
               <a
-                className="underline text-primary"
+                className="text-primary underline"
                 href="https://amzn.to/41gkI1V/"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -48,7 +47,7 @@ export default async function Home() {
             <p>
               勉強会などで発表したスライドは
               <a
-                className="underline text-primary"
+                className="text-primary underline"
                 href="https://speakerdeck.com/dachi023/"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -64,15 +63,15 @@ export default async function Home() {
           <div className="flex items-center justify-between gap-6">
             <h2 className="text-lg font-medium">最新記事</h2>
             <Link
-              className="border border-primary py-1.5 rounded-lg px-4"
+              className="rounded-lg border border-primary px-4 py-1.5"
               href="/posts"
             >
-              <span className="text-sm text-primary font-medium">
+              <span className="text-sm font-medium text-primary">
                 すべて見る
               </span>
             </Link>
           </div>
-          <ul className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-8">
+          <ul className="mt-8 grid grid-cols-1 gap-8 md:grid-cols-3">
             {posts.slice(0, 3).map(({ data }) => {
               const date = dayjs(data.date);
               const ts = date.unix();
@@ -80,10 +79,10 @@ export default async function Home() {
               return (
                 <li key={ts}>
                   <Link
-                    className="py-6 px-8 h-full flex flex-col justify-between gap-2 rounded-xl border-2 border-gray-400 hover:border-primary"
+                    className="flex h-full flex-col justify-between gap-2 rounded-xl border-2 border-gray-400 px-8 py-6 hover:border-primary"
                     href={`/posts/${ts}`}
                   >
-                    <p className="text-lg text-gray-800 font-medium">
+                    <p className="text-lg font-medium text-gray-800">
                       {data.title}
                     </p>
                     <small className="flex items-center gap-1 text-sm">

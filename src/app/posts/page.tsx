@@ -1,9 +1,8 @@
+import { createMetadata } from "@/libs/metadata";
+import { getAllPosts } from "@/libs/post";
 import dayjs from "dayjs";
 import { Metadata } from "next";
 import Link from "next/link";
-
-import { createMetadata } from "@/libs/metadata";
-import { getAllPosts } from "@/libs/post";
 
 export const metadata: Metadata = createMetadata({
   title: "記事一覧",
@@ -24,10 +23,10 @@ export default async function Posts() {
           return (
             <li key={ts}>
               <Link
-                className="py-6 px-8 flex flex-col gap-2 rounded-xl border-2 border-gray-400 hover:border-primary"
+                className="flex flex-col gap-2 rounded-xl border-2 border-gray-400 px-8 py-6 hover:border-primary"
                 href={`/posts/${ts}`}
               >
-                <p className="text-lg text-gray-800 font-medium">
+                <p className="text-lg font-medium text-gray-800">
                   {data.title}
                 </p>
                 <small className="flex items-center gap-1 text-sm">

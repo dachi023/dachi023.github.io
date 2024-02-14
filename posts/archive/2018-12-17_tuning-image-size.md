@@ -11,7 +11,7 @@ date: 2018-12-17
 
 スマホで撮った写真のサイズがでかい。撮ったものをFirebaseのCloud Storageに入れているんだけどなかなか時間がかかる。でもリサイズしたくないのでクライアントでいい感じに圧縮する技術とかないのかなって思ってるんだけどなんかあるのかな〜、もうちょい探そう…。
 
-### create-react-appでNODE\_PATHを設定した
+### create-react-appでNODE_PATHを設定した
 
 .envに`NODE_PATH` を設定するとwebpackのaliasみたいにimport文で相対パスを使わなくてよくなる。なるんだが、FlowとESLintで解決できなくなるので対応してあげる必要がある。
 

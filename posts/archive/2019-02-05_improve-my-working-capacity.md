@@ -11,10 +11,10 @@ date: 2019-02-05
 
 [今週号](https://jser.info/2019/02/05/firefox-65webpsafari-12.1ecmascript-2019/)を読んだ、以下感想 💬
 
-*   ES2019の `Array.prototype.{flat,flatMap}` はありがたい。頻度は多くないけどたまに多重化した配列を操作したときなどあるので
-*   [Rollupでバンドル~npm公開まで](https://levelup.gitconnected.com/code-splitting-for-libraries-bundling-for-npm-with-rollup-1-0-2522c7437697)。Rollupはライブラリ用ってポジションになりつつある気がする
-*   Bower…お前まだ…生きていたのか…となった
-*   [httpie](https://github.com/lukeed/httpie)かわいい。Node.js 最近触る頻度多いので使ってみよう
+- ES2019の `Array.prototype.{flat,flatMap}` はありがたい。頻度は多くないけどたまに多重化した配列を操作したときなどあるので
+- [Rollupでバンドル~npm公開まで](https://levelup.gitconnected.com/code-splitting-for-libraries-bundling-for-npm-with-rollup-1-0-2522c7437697)。Rollupはライブラリ用ってポジションになりつつある気がする
+- Bower…お前まだ…生きていたのか…となった
+- [httpie](https://github.com/lukeed/httpie)かわいい。Node.js 最近触る頻度多いので使ってみよう
 
 ### キャパシティを上げる
 

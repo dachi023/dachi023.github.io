@@ -12,7 +12,7 @@ date: 2019-02-08
 個人開発でBI使いたい〜となり、業務でも使ってるから[Redashを入れてみた](https://medium.com/@dachi/redash-on-heroku-5b45b366c2a9)のだけどGoogle Data Studio (日本版はGoogle データポータル) という手があるのでは？となって気になってきたので10分くらい触ってみた。
 
 [**Data Studio Product Overview**  
-_Unlock the power of your data with interactive dashboards and beautiful reports that inspire smarter business…_datastudio.google.com](https://datastudio.google.com "https://datastudio.google.com")[](https://datastudio.google.com)
+\_Unlock the power of your data with interactive dashboards and beautiful reports that inspire smarter business…\_datastudio.google.com](https://datastudio.google.com "https://datastudio.google.com")[](https://datastudio.google.com)
 
 ### データソース
 

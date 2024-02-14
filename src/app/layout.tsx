@@ -1,12 +1,10 @@
 import "./globals.css";
-
+import { createMetadata } from "@/libs/metadata";
 import classNames from "classnames";
 import { Metadata } from "next";
 import { Noto_Sans_JP, Pacifico } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
-
-import { createMetadata } from "@/libs/metadata";
 
 export const metadata: Metadata = createMetadata({
   title: "dachi",
@@ -38,11 +36,11 @@ export default function RootLayout({
       className={classNames([notoSansJp.variable, pacifico.variable])}
     >
       <body
-        className="bg-white min-w-full min-h-screen"
+        className="min-h-screen min-w-full bg-white"
         suppressHydrationWarning={true}
       >
         <div className="px-6 pb-24 md:px-48">
-          <header className="py-8 mb-8 flex items-center justify-between gap-5 sticky inset-0 bg-white/95">
+          <header className="sticky inset-0 mb-8 flex items-center justify-between gap-5 bg-white/95 py-8">
             <p className="font-pacifico text-3xl">
               <Link href="/">dachi</Link>
             </p>
@@ -53,7 +51,7 @@ export default function RootLayout({
                 rel="noopener noreferrer"
               >
                 <Image
-                  className="w-6 h-6"
+                  className="h-6 w-6"
                   src="/img/bluesky.svg"
                   alt="Bluesky"
                   width={24}
@@ -66,7 +64,7 @@ export default function RootLayout({
                 rel="noopener noreferrer"
               >
                 <Image
-                  className="w-6 h-6"
+                  className="h-6 w-6"
                   src="/img/x.svg"
                   alt="X"
                   width={24}
@@ -79,7 +77,7 @@ export default function RootLayout({
                 rel="noopener noreferrer"
               >
                 <Image
-                  className="w-6 h-6"
+                  className="h-6 w-6"
                   src="/img/github.svg"
                   alt="GitHub"
                   width={24}
@@ -90,11 +88,11 @@ export default function RootLayout({
           </header>
           {children}
         </div>
-        <footer className="px-6 py-12 bg-secondary/10 md:px-48">
+        <footer className="bg-secondary/10 px-6 py-12 md:px-48">
           <ul className="flex flex-col gap-6">
             <li className="flex flex-col gap-2">
               <span className="text-base">お問い合わせ・ご依頼</span>
-              <span className="text-sm text-gray-800 leading-7">
+              <span className="text-sm leading-7 text-gray-800">
                 XやFacebookでDMいただけますと早めのお返事が可能です。
               </span>
             </li>

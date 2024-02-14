@@ -9,15 +9,15 @@
     }
 
     h1 {
-      @apply mt-16 text-xl text-gray-800 font-semibold;
+      @apply mt-16 text-xl font-semibold text-gray-800;
     }
 
     h2 {
-      @apply mt-16 text-lg text-gray-800 font-semibold;
+      @apply mt-16 text-lg font-semibold text-gray-800;
     }
 
     h3 {
-      @apply mt-12 text-base text-gray-800 font-semibold;
+      @apply mt-12 text-base font-semibold text-gray-800;
     }
 
     hr {
@@ -29,7 +29,7 @@
     }
 
     div {
-      @apply mb-32 -z-10;
+      @apply -z-10 mb-32;
     }
 
     iframe {
@@ -37,15 +37,15 @@
     }
 
     p {
-      @apply mt-4 text-base text-gray-800 leading-8 first:mt-0;
+      @apply mt-4 text-base leading-8 text-gray-800 first:mt-0;
     }
 
     ul {
-      @apply pl-6 list-disc;
+      @apply list-disc pl-6;
     }
 
     li {
-      @apply text-base text-gray-800 leading-8;
+      @apply text-base leading-8 text-gray-800;
     }
   }
 }

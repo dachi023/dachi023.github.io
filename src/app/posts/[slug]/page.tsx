@@ -1,10 +1,9 @@
-import Link from "next/link";
-import { remark } from "remark";
-import html from "remark-html";
-import externalLinks from "remark-external-links";
-
 import { createMetadata } from "@/libs/metadata";
 import { getAllPosts, getPostBySlug } from "@/libs/post";
+import Link from "next/link";
+import { remark } from "remark";
+import externalLinks from "remark-external-links";
+import html from "remark-html";
 
 export async function generateMetadata({
   params,
@@ -42,20 +41,20 @@ export default async function Post({ params }: { params: { slug: string } }) {
 
   return (
     <main>
-      <h1 className="text-2xl text-gray-800 font-bold">{post.data.title}</h1>
+      <h1 className="text-2xl font-bold text-gray-800">{post.data.title}</h1>
       <p className="mt-4 text-sm text-gray-600">{post.data.description}</p>
 
       <section
-        className="mt-20 markdown"
+        className="markdown mt-20"
         dangerouslySetInnerHTML={{ __html: content.toString() }}
       />
 
       <div className="mt-20">
         <Link
-          className="border border-primary py-1.5 rounded-lg px-4"
+          className="rounded-lg border border-primary px-4 py-1.5"
           href="/posts"
         >
-          <span className="text-sm text-primary font-medium">一覧に戻る</span>
+          <span className="text-sm font-medium text-primary">一覧に戻る</span>
         </Link>
       </div>
     </main>

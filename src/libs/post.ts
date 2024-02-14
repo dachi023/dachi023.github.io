@@ -1,8 +1,7 @@
-import { promises as fs } from "fs";
-import { join } from "path";
-
 import dayjs from "dayjs";
+import { promises as fs } from "fs";
 import matter, { GrayMatterFile } from "gray-matter";
+import { join } from "path";
 
 export interface Post extends GrayMatterFile<string> {
   data: {
@@ -42,8 +41,8 @@ async function readAll(): Promise<Post[]> {
           };
 
           return { ...value, data };
-        })
-      )
+        }),
+      ),
   );
 
   return files as Post[];

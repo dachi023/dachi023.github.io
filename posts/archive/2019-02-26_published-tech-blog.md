@@ -12,7 +12,7 @@ date: 2019-02-26
 会社の技術ブログでReact Hookについて書いた。HooksをどうやったらProduction環境に突っ込めるかなって考えた時にじゃあ記事書くついでにちゃんと最初から勉強してみよう〜！となりこのテーマになった。それで、記事を書くにあたってひととおりの最低限の実装をしてみたけど、意外と学ぶことが多かったなぁと感じた。
 
 [**React HooksとContextAPIでFluxをやってみる - コネヒト開発者ブログ**  
-_CTO室エンジニアの安達 (@dachi\_023) です。React v16.8で待ちに待ったHooksが (20日前に)…_tech.connehito.com](http://tech.connehito.com/entry/react-hooks-with-flux "http://tech.connehito.com/entry/react-hooks-with-flux")[](http://tech.connehito.com/entry/react-hooks-with-flux)
+\_CTO室エンジニアの安達 (@dachi_023) です。React v16.8で待ちに待ったHooksが (20日前に)…\_tech.connehito.com](http://tech.connehito.com/entry/react-hooks-with-flux "http://tech.connehito.com/entry/react-hooks-with-flux")[](http://tech.connehito.com/entry/react-hooks-with-flux)
 
 この記事のために書いたコード、ぶっちゃけめちゃくちゃ自信があるわけでもないが、それをブコメなりツイートなりで正してくれるのがインターネットかなという気持ちでいる。
 

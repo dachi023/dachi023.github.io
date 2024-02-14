@@ -11,10 +11,10 @@ date: 2018-12-15
 
 ※ ビルドツールなどは省く
 
-*   Font Awesome
-*   Material-UI, Semantic-UI-React
-*   React
-*   styled-components
+- Font Awesome
+- Material-UI, Semantic-UI-React
+- React
+- styled-components
 
 Font Awsomeは何年も使わせてもらっている。とにかく種類が多いので欲しいものはだいたい揃ってて他のアイコンライブラリを入れる必要がそんなにない。
 
