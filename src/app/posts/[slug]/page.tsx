@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { remark } from "remark";
 import html from "remark-html";
 import externalLinks from "remark-external-links";
@@ -31,7 +32,7 @@ export async function generateStaticParams() {
 export default async function Post({ params }: { params: { slug: string } }) {
   const post = await getPostBySlug(params.slug);
   if (!post) {
-    throw new Error();
+    throw new Error("404 Not Found");
   }
 
   const content = await remark()
@@ -40,14 +41,23 @@ export default async function Post({ params }: { params: { slug: string } }) {
     .process(post.content);
 
   return (
-    <main className="px-8 pt-10 pb-16 bg-white rounded-xl shadow-lg">
+    <main>
       <h1 className="text-2xl text-gray-800 font-bold">{post.data.title}</h1>
-      <p className="mt-2 text-sm text-gray-500">{post.data.description}</p>
+      <p className="mt-4 text-sm text-gray-600">{post.data.description}</p>
 
       <section
-        className="mt-8 markdown"
+        className="mt-20 markdown"
         dangerouslySetInnerHTML={{ __html: content.toString() }}
       />
+
+      <div className="mt-20">
+        <Link
+          className="border border-primary py-1.5 rounded-lg px-4"
+          href="/posts"
+        >
+          <span className="text-sm text-primary font-medium">一覧に戻る</span>
+        </Link>
+      </div>
     </main>
   );
 }

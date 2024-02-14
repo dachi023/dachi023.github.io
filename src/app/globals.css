@@ -5,31 +5,47 @@
 @layer components {
   .markdown {
     a {
-      @apply text-blue-800 underline;
+      @apply text-primary underline;
     }
 
     h1 {
-      @apply mt-12 text-2xl text-gray-800 font-semibold;
+      @apply mt-16 text-xl text-gray-800 font-semibold;
     }
 
     h2 {
-      @apply mt-12 text-xl text-gray-800 font-semibold;
+      @apply mt-16 text-lg text-gray-800 font-semibold;
     }
 
     h3 {
-      @apply mt-8 text-lg text-gray-800 font-semibold;
+      @apply mt-12 text-base text-gray-800 font-semibold;
     }
 
     hr {
-      @apply my-10 border-gray-200;
+      @apply my-8 border-gray-200;
     }
 
     img {
       @apply block max-w-full;
     }
 
+    div {
+      @apply mb-32 -z-10;
+    }
+
+    iframe {
+      @apply mt-16;
+    }
+
     p {
-      @apply mt-3 text-gray-800 leading-relaxed first:mt-0;
+      @apply mt-4 text-base text-gray-800 leading-8 first:mt-0;
+    }
+
+    ul {
+      @apply pl-6 list-disc;
+    }
+
+    li {
+      @apply text-base text-gray-800 leading-8;
     }
   }
 }

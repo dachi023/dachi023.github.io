@@ -8,6 +8,7 @@
     "export": "next export",
     "start": "next start",
     "lint": "next lint",
+    "format": "prettier . --write",
     "copy": "cp .nojekyll CNAME out",
     "upload": "gh-pages -t -d out",
     "deploy": "run-s build export copy upload"

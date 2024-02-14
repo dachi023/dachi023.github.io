@@ -3,8 +3,8 @@ import "./globals.css";
 import classNames from "classnames";
 import { Metadata } from "next";
 import { Noto_Sans_JP, Pacifico } from "next/font/google";
+import Image from "next/image";
 import Link from "next/link";
-import twemoji from "twemoji";
 
 import { createMetadata } from "@/libs/metadata";
 
@@ -38,39 +38,64 @@ export default function RootLayout({
       className={classNames([notoSansJp.variable, pacifico.variable])}
     >
       <body
-        className="bg-[#F5F5DC] min-w-full min-h-screen"
+        className="bg-white min-w-full min-h-screen"
         suppressHydrationWarning={true}
       >
-        <div className="px-6 pb-24 md:px-16">
-          <header className="pt-12 pb-16 flex items-start gap-5">
-            <p className="font-pacifico text-5xl">
+        <div className="px-6 pb-24 md:px-48">
+          <header className="py-8 mb-8 flex items-center justify-between gap-5 sticky inset-0 bg-white/95">
+            <p className="font-pacifico text-3xl">
               <Link href="/">dachi</Link>
             </p>
-            <Link
-              className="w-8 h-8"
-              href="/posts"
-              dangerouslySetInnerHTML={{ __html: twemoji.parse("💬") }}
-            />
+            <div className="flex gap-6">
+              <a
+                href="https://bsky.app/profile/dachi.one"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Image
+                  className="w-6 h-6"
+                  src="/img/bluesky.svg"
+                  alt="Bluesky"
+                  width={24}
+                  height={24}
+                />
+              </a>
+              <a
+                href="https://twitter.com/dachi_023"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Image
+                  className="w-6 h-6"
+                  src="/img/x.svg"
+                  alt="X"
+                  width={24}
+                  height={24}
+                />
+              </a>
+              <a
+                href="https://github.com/dachi023"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Image
+                  className="w-6 h-6"
+                  src="/img/github.svg"
+                  alt="GitHub"
+                  width={24}
+                  height={24}
+                />
+              </a>
+            </div>
           </header>
           {children}
         </div>
-        <footer className="px-6 py-12 bg-[#FAEBE5] md:px-16">
+        <footer className="px-6 py-12 bg-secondary/10 md:px-48">
           <ul className="flex flex-col gap-6">
-            <li className="flex flex-col gap-1">
-              <span className="text-xs text-gray-800 font-semibold">
-                お問い合わせ
-              </span>
-              <span className="text-xs text-gray-600">
-                ご依頼・お問い合わせ等はTwitterやFacebookなど、ソーシャルメディアのDMにて受け付けております。
-              </span>
-            </li>
-            <li className="flex flex-col gap-1">
-              <span className="text-xs text-gray-800 font-semibold">
-                Amazonアソシエイト・プログラム
-              </span>
-              <span className="text-xs text-gray-600">
-                Amazonのアソシエイトとして、Ryo
-                Adachiは適格販売により収入を得ています。
+            <li className="flex flex-col gap-2">
+              <span className="text-base">お問い合わせ・ご依頼</span>
+              <span className="text-sm text-gray-800 leading-7">
+                XやFacebookでDMいただけますと早めのお返事が可能です。
               </span>
             </li>
           </ul>

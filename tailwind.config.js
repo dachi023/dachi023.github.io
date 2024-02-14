@@ -1,3 +1,4 @@
+const colors = require("tailwindcss/colors");
 const { fontFamily } = require("tailwindcss/defaultTheme");
 
 const family = fontFamily.sans.join(",");
@@ -10,6 +11,13 @@ module.exports = {
     "./src/app/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    colors: {
+      ...colors,
+      // NOTE: https://coolors.co/palette/5465ff-788bff-9bb1ff-bfd7ff-e2fdff
+      primary: "#5465ff",
+      secondary: "#9bb1ff",
+      accent: "#81b29a",
+    },
     extend: {
       fontFamily: {
         sans: [`var(--font-noto-sans-jp),${family}`],
