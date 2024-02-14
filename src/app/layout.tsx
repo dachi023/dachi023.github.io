@@ -6,6 +6,8 @@ import { Noto_Sans_JP, Pacifico } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
 
+import { FontFamily } from "@/libs/components/fontfamily";
+
 export const metadata: Metadata = createMetadata({
   title: "dachi",
   description: "よろしくおねがいします",
@@ -35,6 +37,7 @@ export default function RootLayout({
       lang="ja"
       className={classNames([notoSansJp.variable, pacifico.variable])}
     >
+      <FontFamily />
       <body
         className="min-h-screen min-w-full bg-white"
         suppressHydrationWarning={true}
