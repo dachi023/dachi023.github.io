@@ -1,9 +1,11 @@
-import { createMetadata } from "@/libs/metadata";
-import { getAllPosts, getPostBySlug } from "@/libs/post";
+import dayjs from "dayjs";
 import Link from "next/link";
 import { remark } from "remark";
 import externalLinks from "remark-external-links";
 import html from "remark-html";
+
+import { createMetadata } from "@/libs/metadata";
+import { getAllPosts, getPostBySlug } from "@/libs/post";
 
 export async function generateMetadata({
   params,
@@ -34,6 +36,8 @@ export default async function Post({ params }: { params: { slug: string } }) {
     throw new Error("404 Not Found");
   }
 
+  const date = dayjs(post.data.date);
+
   const content = await remark()
     .use(externalLinks)
     .use(html, { sanitize: false })
@@ -42,7 +46,10 @@ export default async function Post({ params }: { params: { slug: string } }) {
   return (
     <main>
       <h1 className="text-2xl font-bold text-gray-800">{post.data.title}</h1>
-      <p className="mt-4 text-sm text-gray-600">{post.data.description}</p>
+      <p className="mt-4 text-sm text-gray-600 flex gap-2">
+        <span>{date.format("YYYY-MM-DD")}</span>
+        <span>{post.data.description}</span>
+      </p>
 
       <section
         className="markdown mt-20"
