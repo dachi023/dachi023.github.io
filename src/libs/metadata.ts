@@ -4,7 +4,7 @@ export const baseUrl = "https://www.dachi.one";
 
 const siteName = "dachi";
 
-const ogImageUrl = `${baseUrl}/img/ogp.png`;
+const ogImageUrl = `${baseUrl}/img/og.png`;
 
 const base: Metadata = {
   title: {
