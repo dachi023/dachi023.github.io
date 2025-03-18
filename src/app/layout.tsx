@@ -1,12 +1,11 @@
 import "./globals.css";
+import { FontFamily } from "@/libs/components/fontfamily";
 import { createMetadata } from "@/libs/metadata";
 import classNames from "classnames";
 import { Metadata } from "next";
 import { Noto_Sans_JP, Pacifico } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
-
-import { FontFamily } from "@/libs/components/fontfamily";
 
 export const metadata: Metadata = createMetadata({
   title: "dachi",
@@ -42,57 +41,59 @@ export default function RootLayout({
         className="min-h-screen min-w-full bg-white"
         suppressHydrationWarning={true}
       >
-        <div className="px-6 pb-24 md:px-48">
-          <header className="sticky inset-0 mb-8 flex items-center justify-between gap-5 bg-white/95 py-8">
-            <p className="font-pacifico text-3xl">
-              <Link href="/">dachi</Link>
-            </p>
-            <div className="flex gap-6">
-              <a
-                href="https://bsky.app/profile/dachi.one"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Image
-                  className="h-6 w-6"
-                  src="/img/bluesky.svg"
-                  alt="Bluesky"
-                  width={24}
-                  height={24}
-                />
-              </a>
-              <a
-                href="https://twitter.com/dachi_023"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Image
-                  className="h-6 w-6"
-                  src="/img/x.svg"
-                  alt="X"
-                  width={24}
-                  height={24}
-                />
-              </a>
-              <a
-                href="https://github.com/dachi023"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Image
-                  className="h-6 w-6"
-                  src="/img/github.svg"
-                  alt="GitHub"
-                  width={24}
-                  height={24}
-                />
-              </a>
-            </div>
-          </header>
-          {children}
+        <div className="px-6 pb-24 md:px-24">
+          <div className="md:mx-auto md:max-w-6xl">
+            <header className="sticky inset-0 mb-8 flex items-center justify-between gap-5 bg-white/95 py-8">
+              <p className="font-pacifico text-4xl">
+                <Link href="/">dachi</Link>
+              </p>
+              <div className="flex gap-6">
+                <a
+                  href="https://bsky.app/profile/dachi.one"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Image
+                    className="h-6 w-6"
+                    src="/img/bluesky.svg"
+                    alt="Bluesky"
+                    width={24}
+                    height={24}
+                  />
+                </a>
+                <a
+                  href="https://twitter.com/dachi_023"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Image
+                    className="h-6 w-6"
+                    src="/img/x.svg"
+                    alt="X"
+                    width={24}
+                    height={24}
+                  />
+                </a>
+                <a
+                  href="https://github.com/dachi023"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Image
+                    className="h-6 w-6"
+                    src="/img/github.svg"
+                    alt="GitHub"
+                    width={24}
+                    height={24}
+                  />
+                </a>
+              </div>
+            </header>
+            {children}
+          </div>
         </div>
-        <footer className="bg-secondary/10 px-6 py-12 md:px-48">
-          <ul className="flex flex-col gap-6">
+        <footer className="bg-secondary/10 px-6 py-12 md:px-24">
+          <ul className="flex flex-col gap-6 md:mx-auto md:max-w-6xl">
             <li className="flex flex-col gap-2">
               <span className="text-base">お問い合わせ・ご依頼</span>
               <span className="text-sm leading-7 text-gray-800">

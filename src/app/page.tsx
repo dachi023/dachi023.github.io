@@ -1,5 +1,6 @@
 import { getAllPosts } from "@/libs/post";
 import dayjs from "dayjs";
+import Image from "next/image";
 import Link from "next/link";
 
 export default async function Home() {
@@ -7,14 +8,11 @@ export default async function Home() {
 
   return (
     <main>
-      <div className="flex flex-col gap-12">
+      <div className="flex flex-col gap-16">
         <section>
-          <h2 className="text-lg font-medium">作者について</h2>
-          <div className="mt-6 flex flex-col gap-6 text-base leading-8">
-            <p>
-              Ryo
-              Adachiもしくはdachi(dachi023)というハンドルネームでネット上での発信をしています。
-            </p>
+          <h2 className="text-2xl font-medium">About</h2>
+          <div className="mt-8 flex flex-col gap-6 text-base leading-8">
+            <p>Ryo Adachiもしくはdachi(dachi023)で普段は発信等をしています。</p>
             <p>
               2012年からウェブエンジニアとして働いており、現在は
               <a
@@ -25,27 +23,70 @@ export default async function Home() {
               >
                 MOSH株式会社
               </a>
-              でフロントエンドを中心に組織全体の開発基盤の整備等を担当しています。また、個人では業務委託でウェブサービスの開発やアドバイザーといった業務等も行っています。
+              に所属。
+              <br />
+              フロントエンド基盤の開発をメインとしつつ、技術広報としてイベント運営や
+              <a
+                className="text-primary underline"
+                href="https://open.spotify.com/show/478u0bSmJ8IThAFsJppkny?si=1acab2da220d48c3"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                企業ポッドキャスト
+              </a>
+              の企画やMCなども担当。
+            </p>
+            <p>
+              個人では業務委託でウェブサイトの開発、フロントエンド関連のアドバイザー業務など。
             </p>
           </div>
         </section>
 
         <section>
-          <h2 className="text-lg font-medium">活動実績</h2>
-          <div className="mt-6 flex flex-col gap-6 text-base">
-            <p>
+          <h2 className="text-2xl font-medium">Career</h2>
+          <div className="mt-8 flex flex-col gap-4 text-base">
+            <p className="flex gap-2">
+              <span>2021 〜</span>
+              <span>
+                MOSH
+                <br />
+                <small>Angular, React, AWS ECS, Cloudflare Pages</small>
+              </span>
+            </p>
+            <p className="flex gap-2">
+              <span>2016 〜</span>
+              <span>
+                コネヒト
+                <br />
+                <small>PHP, Go, jQuery, Backbone.js, React, AWS ECS</small>
+              </span>
+            </p>
+            <p className="flex gap-2">
+              <span>2012 〜</span>
+              <span>
+                アクティブ・ワーク
+                <br />
+                <small>Java, PHP, jQuery, AngularJS</small>
+              </span>
+            </p>
+          </div>
+
+          <h3 className="mt-8 text-lg font-medium">その他</h3>
+          <ul className="mt-4 flex list-disc flex-col gap-3 pl-6 text-base">
+            <li>
+              2020年に
               <a
                 className="text-primary underline"
-                href="https://amzn.to/41gkI1V/"
+                href="https://www.amazon.co.jp/dp/4798061778"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 フロントエンド開発入門
               </a>
-              という書籍を共著で執筆し、2020年に発売しました。
-            </p>
-            <p>
-              勉強会などで発表したスライドは
+              を共著で執筆しました。
+            </li>
+            <li>
+              過去の発表資料は
               <a
                 className="text-primary underline"
                 href="https://speakerdeck.com/dachi023/"
@@ -55,13 +96,25 @@ export default async function Home() {
                 Speaker Deck
               </a>
               にアップロードしています。
-            </p>
-          </div>
+            </li>
+            <li>
+              技術ブログは
+              <a
+                className="text-primary underline"
+                href="https://zenn.dev/dachi"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Zenn
+              </a>
+              に書いています。
+            </li>
+          </ul>
         </section>
 
         <section>
           <div className="flex items-center justify-between gap-6">
-            <h2 className="text-lg font-medium">最新記事</h2>
+            <h2 className="text-2xl font-medium">Blog</h2>
             <Link
               className="rounded-lg border border-primary px-4 py-1.5"
               href="/posts"
