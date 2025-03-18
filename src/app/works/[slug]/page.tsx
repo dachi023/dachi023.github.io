@@ -1,5 +1,5 @@
 import { createMetadata } from "@/libs/metadata";
-import { getAllPosts, getPostBySlug } from "@/libs/post";
+import { getAllWorks, getWorkBySlug } from "@/libs/work";
 import dayjs from "dayjs";
 import Link from "next/link";
 import { remark } from "remark";
@@ -12,7 +12,7 @@ export async function generateMetadata({
   params: { slug: string };
 }) {
   const { slug } = params;
-  const post = await getPostBySlug(slug);
+  const post = await getWorkBySlug(slug);
 
   return createMetadata({
     title: post?.data.title,
@@ -22,32 +22,32 @@ export async function generateMetadata({
 }
 
 export async function generateStaticParams() {
-  const posts = await getAllPosts();
+  const work = await getAllWorks();
 
-  return posts.map(({ data }) => ({
+  return work.map(({ data }) => ({
     slug: data.slug,
   }));
 }
 
-export default async function Post({ params }: { params: { slug: string } }) {
-  const post = await getPostBySlug(params.slug);
-  if (!post) {
+export default async function Work({ params }: { params: { slug: string } }) {
+  const work = await getWorkBySlug(params.slug);
+  if (!work) {
     throw new Error("404 Not Found");
   }
 
-  const date = dayjs(post.data.date);
+  const date = dayjs(work.data.date);
 
   const content = await remark()
     .use(externalLinks)
     .use(html, { sanitize: false })
-    .process(post.content);
+    .process(work.content);
 
   return (
     <main>
-      <h1 className="text-2xl font-bold text-gray-800">{post.data.title}</h1>
+      <h1 className="text-2xl font-bold text-gray-800">{work.data.title}</h1>
       <p className="mt-4 flex gap-2 text-sm text-gray-600">
-        <span>{date.format("YYYY-MM-DD")}</span>
-        <span>{post.data.description}</span>
+        <span>{date.format("YYYY-MM")}</span>
+        <span>{work.data.description}</span>
       </p>
 
       <section
@@ -55,14 +55,14 @@ export default async function Post({ params }: { params: { slug: string } }) {
         dangerouslySetInnerHTML={{ __html: content.toString() }}
       />
 
-      <div className="mt-20">
+      {/* <div className="mt-20">
         <Link
-          className="rounded-lg border-2 border-primary px-6 py-2"
+          className="rounded-lg border border-primary px-4 py-1.5"
           href="/posts"
         >
-          <span className="text-base font-medium text-primary">一覧に戻る</span>
+          <span className="text-sm font-medium text-primary">一覧に戻る</span>
         </Link>
-      </div>
+      </div> */}
     </main>
   );
 }

@@ -41,7 +41,7 @@
     }
 
     ul {
-      @apply list-disc pl-6;
+      @apply mt-4 list-disc pl-6;
     }
 
     li {

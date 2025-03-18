@@ -23,10 +23,10 @@ export default async function Posts() {
           return (
             <li key={ts}>
               <Link
-                className="flex flex-col gap-2 rounded-xl border-2 border-gray-400 px-8 py-6 hover:border-primary"
+                className="group flex flex-col gap-2 rounded-xl border-2 border-gray-400 px-8 py-6 hover:border-primary"
                 href={`/posts/${ts}`}
               >
-                <p className="text-lg font-medium text-gray-800">
+                <p className="text-lg font-semibold text-gray-700 group-hover:text-primary">
                   {data.title}
                 </p>
                 <small className="flex items-center gap-1 text-sm">

@@ -10,7 +10,7 @@ export default async function Home() {
     <main>
       <div className="flex flex-col gap-16">
         <section>
-          <h2 className="text-2xl font-medium">About</h2>
+          <h2 className="text-2xl font-semibold">ABOUT</h2>
           <div className="mt-8 flex flex-col gap-6 text-base leading-8">
             <p>Ryo Adachiもしくはdachi(dachi023)で普段は発信等をしています。</p>
             <p>
@@ -43,7 +43,7 @@ export default async function Home() {
         </section>
 
         <section>
-          <h2 className="text-2xl font-medium">Career</h2>
+          <h2 className="text-2xl font-semibold">CAREER</h2>
           <div className="mt-8 flex flex-col gap-4 text-base">
             <p className="flex gap-2">
               <span>2021 〜</span>
@@ -113,13 +113,32 @@ export default async function Home() {
         </section>
 
         <section>
+          <h2 className="text-2xl font-semibold">WORKS</h2>
+          <ul className="mt-8 grid grid-cols-1 gap-8 md:grid-cols-2">
+            <li>
+              <Link
+                className="hover:opacity-70"
+                href="/works/chill-classic-concert"
+              >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  className="w-fit"
+                  src="/works/chill-classic-concert/cover.jpg"
+                  alt="CHILL CLASSIC CONCERT"
+                />
+              </Link>
+            </li>
+          </ul>
+        </section>
+
+        <section>
           <div className="flex items-center justify-between gap-6">
-            <h2 className="text-2xl font-medium">Blog</h2>
+            <h2 className="text-2xl font-semibold">BLOG</h2>
             <Link
-              className="rounded-lg border border-primary px-4 py-1.5"
+              className="rounded-lg border-2 border-primary px-4 py-1.5 hover:opacity-70"
               href="/posts"
             >
-              <span className="text-sm font-medium text-primary">
+              <span className="text-base font-medium text-primary">
                 すべて見る
               </span>
             </Link>
@@ -132,14 +151,14 @@ export default async function Home() {
               return (
                 <li key={ts}>
                   <Link
-                    className="flex h-full flex-col justify-between gap-2 rounded-xl border-2 border-gray-400 px-8 py-6 hover:border-primary"
+                    className="group flex h-full flex-col justify-between gap-2 rounded-xl border-2 border-gray-400 px-8 py-6 hover:border-primary"
                     href={`/posts/${ts}`}
                   >
-                    <p className="text-lg font-medium text-gray-800">
+                    <p className="text-lg font-semibold text-gray-700 group-hover:text-primary">
                       {data.title}
                     </p>
                     <small className="flex items-center gap-1 text-sm">
-                      <span className="text-gray-500">
+                      <span className="text-gray-400">
                         {date.format("YYYY-MM-DD")}
                       </span>
                     </small>
