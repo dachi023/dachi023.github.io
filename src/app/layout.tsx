@@ -43,8 +43,8 @@ export default function RootLayout({
       >
         <div className="px-6 pb-24 md:px-24">
           <div className="md:mx-auto md:max-w-6xl">
-            <header className="sticky inset-0 mb-8 flex items-center justify-between gap-5 bg-white/95 py-8">
-              <p className="font-pacifico text-4xl">
+            <header className="sticky inset-0 mb-8 flex items-center justify-between gap-5 bg-white/90 py-4">
+              <p className="font-pacifico text-3xl">
                 <Link href="/">dachi</Link>
               </p>
               <div className="flex gap-6">
@@ -54,7 +54,7 @@ export default function RootLayout({
                   rel="noopener noreferrer"
                 >
                   <Image
-                    className="h-6 w-6"
+                    className="h-5 w-5"
                     src="/img/bluesky.svg"
                     alt="Bluesky"
                     width={24}
@@ -67,7 +67,7 @@ export default function RootLayout({
                   rel="noopener noreferrer"
                 >
                   <Image
-                    className="h-6 w-6"
+                    className="h-5 w-5"
                     src="/img/x.svg"
                     alt="X"
                     width={24}
@@ -80,7 +80,7 @@ export default function RootLayout({
                   rel="noopener noreferrer"
                 >
                   <Image
-                    className="h-6 w-6"
+                    className="h-5 w-5"
                     src="/img/github.svg"
                     alt="GitHub"
                     width={24}
@@ -95,9 +95,11 @@ export default function RootLayout({
         <footer className="bg-secondary/10 px-6 py-12 md:px-24">
           <ul className="flex flex-col gap-6 md:mx-auto md:max-w-6xl">
             <li className="flex flex-col gap-2">
-              <span className="text-base">お問い合わせ・ご依頼</span>
+              <span className="text-base font-medium">
+                お問い合わせ・ご依頼
+              </span>
               <span className="text-sm leading-7 text-gray-800">
-                XやFacebookでDMいただけますと早めのお返事が可能です。
+                XのDMからお願いいたします。
               </span>
             </li>
           </ul>

@@ -4,9 +4,10 @@ description:
 date: 2024-10-04
 ---
 
-ポータルサイトのシステム構築およびウェブサイトの実装を担当しました。
+[CHILL CLASSIC CONCERT](https://www.chill-classic.jp)ポータルサイトのシステム構築およびウェブサイトの実装を担当しました。
 
 [![CHILL CLASSIC CONCERT](/works/chill-classic-concert/cover.jpg)](https://www.chill-classic.jp)
+<small style="display: block; text-align: right;">[&copy; indi inc.](https://indi.co.jp)</small>
 
 
 ## 技術スタック

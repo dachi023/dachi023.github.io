@@ -51,7 +51,7 @@ export default async function Post({ params }: { params: { slug: string } }) {
       </p>
 
       <section
-        className="markdown mt-20"
+        className="markdown mt-12"
         dangerouslySetInnerHTML={{ __html: content.toString() }}
       />
 
