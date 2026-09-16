@@ -1,0 +1,276 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-zen-kaku);
+}
+
+@theme {
+  --color-paper: #fbf6ec;
+  --color-card: #ffffff;
+  --color-ink: #2b2622;
+  --color-soft: #4a453f;
+  --color-muted: #6b655d;
+  --color-faint: #8a837b;
+  --color-rule: #e6dccb;
+  --color-accent: #1f8f80;
+  --color-life: #f3c74a;
+  --color-work: #b9e3dc;
+  --color-dot: #e8dcc6;
+}
+
+@layer base {
+  html {
+    background-color: var(--color-paper);
+  }
+
+  body {
+    background-color: var(--color-paper);
+    color: var(--color-ink);
+    font-family:
+      var(--font-sans), "Hiragino Sans", "Yu Gothic", system-ui, sans-serif;
+    font-size: 16px;
+    line-height: 2;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+/* The paper texture behind the home page and the posts index. */
+@utility dot-grid {
+  background-image: radial-gradient(var(--color-dot) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+/* Lifts cards and pills slightly on hover. */
+@utility hover-lift {
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 28px rgb(60 40 10 / 0.1);
+  }
+}
+
+/* Inline links inside hand written copy, matching the ones in .prose. */
+@utility linky {
+  & a {
+    color: var(--color-accent);
+    border-bottom: 2px solid var(--color-work);
+  }
+
+  & a:hover {
+    border-bottom-color: var(--color-accent);
+  }
+}
+
+/*
+ * Styles for HTML produced from Markdown. The markup is injected as a string,
+ * so it cannot carry utility classes.
+ */
+.prose {
+  font-size: 16px;
+  line-height: 2;
+  color: var(--color-ink);
+  text-wrap: pretty;
+}
+
+.prose > * + * {
+  margin-top: 24px;
+}
+
+.prose p {
+  margin: 0;
+}
+
+.prose h2 {
+  margin: 40px 0 0;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+  padding-left: 16px;
+  border-left: 6px solid var(--color-life);
+}
+
+.prose h3 {
+  margin: 24px 0 0;
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+}
+
+.prose h4,
+.prose h5,
+.prose h6 {
+  margin: 24px 0 0;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.6;
+}
+
+.prose ul,
+.prose ol {
+  margin: 0;
+  padding-left: 24px;
+}
+
+.prose ul {
+  list-style: disc;
+}
+
+.prose ol {
+  list-style: decimal;
+}
+
+.prose li + li {
+  margin-top: 8px;
+}
+
+.prose li > ul,
+.prose li > ol {
+  margin-top: 8px;
+}
+
+.prose blockquote {
+  margin: 0;
+  padding: 16px 24px;
+  background: var(--color-card);
+  border: 2px solid var(--color-ink);
+  border-radius: 16px;
+  color: var(--color-soft);
+}
+
+.prose blockquote > * + * {
+  margin-top: 16px;
+}
+
+.prose pre {
+  margin: 0;
+  padding: 20px 24px;
+  background: var(--color-ink);
+  color: var(--color-paper);
+  border-radius: 16px;
+  font-size: 14px;
+  line-height: 1.7;
+  overflow-x: auto;
+}
+
+.prose pre code {
+  background: none;
+  padding: 0;
+  font-size: inherit;
+  color: inherit;
+}
+
+.prose code {
+  font-size: 0.9em;
+  background: #f1e9da;
+  border-radius: 6px;
+  padding: 2px 6px;
+}
+
+.prose code,
+.prose pre {
+  font-family: "SF Mono", Menlo, Consolas, monospace;
+}
+
+.prose a {
+  color: var(--color-accent);
+  border-bottom: 2px solid var(--color-work);
+}
+
+.prose a:hover {
+  border-bottom-color: var(--color-accent);
+}
+
+.prose img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  border: 2px solid var(--color-ink);
+  background: var(--color-card);
+}
+
+.prose a:has(> img) {
+  border-bottom: 0;
+}
+
+.prose hr {
+  border: 0;
+  border-top: 2px dashed var(--color-rule);
+}
+
+.prose table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+}
+
+.prose th,
+.prose td {
+  border: 2px solid var(--color-rule);
+  padding: 8px 12px;
+  text-align: left;
+}
+
+/* SpeakerDeck embeds ship their own aspect-ratio wrapper. */
+.prose iframe {
+  display: block;
+  width: 100%;
+  border: 0;
+}
+
+/* The intro block of a work: lead paragraph, cover image and its caption. */
+.work-intro small {
+  display: block;
+  margin-top: 8px;
+  font-size: 12px;
+  color: var(--color-faint);
+}
+
+.work-intro small a {
+  border-bottom: 0;
+}
+
+.work-intro img {
+  border-radius: 20px;
+}
+
+@media (max-width: 767px) {
+  .prose {
+    line-height: 1.95;
+  }
+
+  .prose > * + * {
+    margin-top: 20px;
+  }
+
+  .prose h2 {
+    margin-top: 24px;
+    font-size: 21px;
+    padding-left: 14px;
+  }
+
+  .prose h3 {
+    font-size: 18px;
+  }
+
+  .prose blockquote {
+    padding: 14px 18px;
+    border-radius: 14px;
+    font-size: 15px;
+  }
+
+  .prose pre {
+    padding: 16px 18px;
+    border-radius: 14px;
+  }
+}
