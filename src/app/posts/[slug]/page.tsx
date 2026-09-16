@@ -61,11 +61,20 @@ export async function generateMetadata({
       description,
       url,
       publishedTime: post.date.toISOString(),
+      images: [
+        {
+          url: `/posts/${post.slug}/og.png`,
+          width: 1200,
+          height: 630,
+          alt: post.title,
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
       title: `${post.title} | dachi`,
       description,
+      images: [`/posts/${post.slug}/og.png`],
     },
   };
 }
