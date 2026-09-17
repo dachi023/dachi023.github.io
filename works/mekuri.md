@@ -26,3 +26,5 @@ date: 2026-09-18
 - Terraform
 
 同期はDurable ObjectsのWebSocketで行い、接続が切れた場合はポーリングにフォールバックします。
+
+![Architecture diagram](/works/mekuri/architecture-diagram.png)
