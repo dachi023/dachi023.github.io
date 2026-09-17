@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 
 import { SiteShell } from "@/components/site-shell";
 import { formatDate, getAllPosts, getYear } from "@/lib/content";
 
-import { PostsIndex, type PostRow } from "./posts-index";
+import { PostsIndex, PostsIndexFallback, type PostRow } from "./posts-index";
 
 export const metadata: Metadata = {
   title: "Posts",
@@ -28,7 +29,15 @@ export default function PostsPage() {
 
   return (
     <SiteShell dots>
-      <PostsIndex posts={posts} />
+      {/*
+        `PostsIndex` reads `?page=` through `useSearchParams`, which a
+        prerendered route can only answer in the browser. The boundary keeps
+        that bail-out local, and its fallback is the very same list on its
+        first page, so the exported HTML is the page it claims to be.
+      */}
+      <Suspense fallback={<PostsIndexFallback posts={posts} />}>
+        <PostsIndex posts={posts} />
+      </Suspense>
     </SiteShell>
   );
 }
