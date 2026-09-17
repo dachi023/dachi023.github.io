@@ -3,6 +3,9 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import { SiteShell } from "@/components/site-shell";
+import { Badge } from "@/components/ui/badge";
+import { buttonVariants } from "@/components/ui/button";
+import { Separator } from "@/components/ui/separator";
 import {
   formatDate,
   getAllWorks,
@@ -68,10 +71,8 @@ export default async function WorkPage({
       <article className="mx-auto flex w-full max-w-[820px] flex-col gap-7 md:gap-10">
         <header className="flex flex-col gap-3.5 md:gap-[18px]">
           <div className="flex items-center gap-2.5 md:gap-3">
-            <span className="rounded-full bg-ink px-3 py-1 text-[12px] font-bold tracking-[0.02em] text-paper md:text-[13px]">
-              Works
-            </span>
-            <span className="text-[13px] font-bold tracking-[0.02em] text-faint md:text-[14px]">
+            <Badge variant="ink">Works</Badge>
+            <span className="text-faint text-[13px] font-bold tracking-[0.02em] md:text-[14px]">
               {formatDate(work.date)}
             </span>
           </div>
@@ -89,11 +90,10 @@ export default async function WorkPage({
           <div className="prose" dangerouslySetInnerHTML={{ __html: bodyHtml }} />
         ) : null}
 
-        <nav className="border-t-2 border-dashed border-rule pt-7 md:pt-10">
-          <Link
-            href="/"
-            className="inline-block rounded-full border-2 border-ink bg-card px-4 py-2.5 text-[14px] font-bold tracking-[0.02em] hover:text-accent md:px-[18px] md:text-[15px]"
-          >
+        <Separator className="border-rule h-0 border-t-2 border-dashed bg-transparent data-horizontal:h-0" />
+
+        <nav>
+          <Link href="/" className={buttonVariants({ variant: "pill" })}>
             ← トップへ戻る
           </Link>
         </nav>

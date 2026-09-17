@@ -4,6 +4,8 @@ import { notFound } from "next/navigation";
 
 import { CategoryChip } from "@/components/category-chip";
 import { SiteShell } from "@/components/site-shell";
+import { buttonVariants } from "@/components/ui/button";
+import { Separator } from "@/components/ui/separator";
 import {
   formatDate,
   getAllPosts,
@@ -14,6 +16,7 @@ import {
 } from "@/lib/content";
 import { renderMarkdown } from "@/lib/markdown";
 import { siteUrl } from "@/lib/site";
+import { cn } from "@/lib/utils";
 
 type Params = { slug: string };
 
@@ -142,19 +145,24 @@ export default async function PostPage({
 
         <div className="prose" dangerouslySetInnerHTML={{ __html: html }} />
 
-        <nav className="flex flex-col gap-3 border-t-2 border-dashed border-rule pt-7 md:flex-row md:items-center md:justify-between md:pt-10">
+        <Separator className="border-rule h-0 border-t-2 border-dashed bg-transparent data-horizontal:h-0" />
+
+        <nav className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
           <Link
             href="/posts/"
-            className="self-start rounded-full border-2 border-ink bg-card px-4 py-2.5 text-[14px] font-bold tracking-[0.02em] hover:text-accent md:px-[18px] md:text-[15px]"
+            className={cn(
+              buttonVariants({ variant: "pill", size: "lg" }),
+              "self-start",
+            )}
           >
             ← 記事一覧
           </Link>
-          <div className="flex gap-2 text-[13px] font-bold tracking-[0.02em] md:text-[14px]">
+          <div className="flex gap-2">
             <a
               href={shareX}
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-full border-2 border-ink bg-card px-3.5 py-2 hover:text-accent md:px-4"
+              className={buttonVariants({ variant: "pill", size: "sm" })}
             >
               X で共有
             </a>
@@ -162,7 +170,7 @@ export default async function PostPage({
               href={shareBluesky}
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-full border-2 border-ink bg-card px-3.5 py-2 hover:text-accent md:px-4"
+              className={buttonVariants({ variant: "pill", size: "sm" })}
             >
               Bluesky で共有
             </a>

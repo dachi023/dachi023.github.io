@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import { SiteShell } from "@/components/site-shell";
+import { buttonVariants } from "@/components/ui/button";
 
 export default function NotFound() {
   return (
@@ -15,17 +16,11 @@ export default function NotFound() {
         <p className="text-muted text-[14px] leading-[1.9] md:text-[15px]">
           URL が変わったか、削除された可能性があります。
         </p>
-        <div className="flex flex-wrap gap-2 text-[14px] font-bold tracking-[0.02em] md:text-[15px]">
-          <Link
-            href="/"
-            className="border-ink bg-card hover:text-accent rounded-full border-2 px-4 py-2.5 md:px-[18px]"
-          >
+        <div className="flex flex-wrap gap-2">
+          <Link href="/" className={buttonVariants({ variant: "pill" })}>
             ← トップへ戻る
           </Link>
-          <Link
-            href="/posts/"
-            className="border-ink bg-card hover:text-accent rounded-full border-2 px-4 py-2.5 md:px-[18px]"
-          >
+          <Link href="/posts/" className={buttonVariants({ variant: "pill" })}>
             記事一覧
           </Link>
         </div>

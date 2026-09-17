@@ -2,6 +2,8 @@ import Link from "next/link";
 
 import { CategoryChip } from "@/components/category-chip";
 import { SiteShell } from "@/components/site-shell";
+import { buttonVariants } from "@/components/ui/button";
+import { Card, CardContent, CardFooter, CardTitle } from "@/components/ui/card";
 import {
   formatDate,
   getAllPosts,
@@ -66,14 +68,14 @@ export default function Home() {
               個人では業務委託でウェブサイトの開発や、フロントエンド関連のアドバイザー業務を受けています。
             </p>
           </div>
-          <div className="flex flex-wrap gap-2 text-[13px] font-bold tracking-[0.02em] md:gap-2.5 md:text-[14px]">
+          <div className="flex flex-wrap gap-2 md:gap-2.5">
             {socialLinks.map((link) => (
               <a
                 key={link.label}
                 href={link.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="border-ink bg-card hover:text-accent rounded-full border-2 px-3.5 py-2 md:px-4"
+                className={buttonVariants({ variant: "pill", size: "sm" })}
               >
                 {link.label}
               </a>
@@ -85,7 +87,7 @@ export default function Home() {
           <h2 className="text-[26px] font-bold tracking-[0.02em] md:text-[30px]">
             Career
           </h2>
-          <div className="border-ink bg-card flex flex-col gap-5 rounded-[20px] border-2 p-6 md:flex-row md:gap-8 md:p-8">
+          <Card className="gap-5 p-6 md:flex-row md:gap-8 md:p-8">
             <ul className="flex flex-1 flex-col gap-4">
               {career.map((item) => (
                 <li key={item.company} className="flex gap-3">
@@ -143,7 +145,7 @@ export default function Home() {
                 </li>
               </ul>
             </div>
-          </div>
+          </Card>
         </section>
 
         <section className="flex flex-col gap-4 md:gap-6">
@@ -153,7 +155,7 @@ export default function Home() {
             </h2>
             <Link
               href="/posts/"
-              className="text-accent text-[14px] font-bold tracking-[0.02em] md:text-[15px]"
+              className={buttonVariants({ variant: "link", size: "text" })}
             >
               すべての記事 ({posts.length}) →
             </Link>
@@ -161,19 +163,18 @@ export default function Home() {
           <ul className="grid grid-cols-1 gap-3 md:grid-cols-3 md:gap-5">
             {posts.slice(0, 6).map((post) => (
               <li key={post.slug} className="hover-lift">
-                <Link
-                  href={`/posts/${post.slug}/`}
-                  className="border-ink bg-card flex h-full flex-col justify-between gap-[18px] rounded-[18px] border-2 p-5 md:min-h-[200px] md:gap-7 md:rounded-[20px] md:p-6"
-                >
-                  <span className="text-[17px] leading-[1.55] font-bold tracking-[0.01em] md:text-[19px]">
-                    {post.title}
-                  </span>
-                  <span className="flex items-center justify-between">
-                    <span className="text-faint text-[13px] font-bold tracking-[0.02em]">
-                      {formatDate(post.date)}
-                    </span>
-                    <CategoryChip category={post.category} />
-                  </span>
+                <Link href={`/posts/${post.slug}/`} className="block h-full">
+                  <Card className="h-full justify-between gap-[18px] rounded-[18px] p-5 md:min-h-[200px] md:gap-7 md:rounded-(--radius) md:p-6">
+                    <CardTitle className="text-[17px] leading-[1.55] md:text-[19px]">
+                      {post.title}
+                    </CardTitle>
+                    <CardFooter className="justify-between">
+                      <span className="text-faint text-[13px] font-bold tracking-[0.02em]">
+                        {formatDate(post.date)}
+                      </span>
+                      <CategoryChip category={post.category} />
+                    </CardFooter>
+                  </Card>
                 </Link>
               </li>
             ))}
@@ -190,27 +191,26 @@ export default function Home() {
           <ul className="flex flex-col gap-5">
             {works.map((work) => (
               <li key={work.slug} className="hover-lift">
-                <Link
-                  href={`/works/${work.slug}/`}
-                  className="border-ink bg-card grid grid-cols-1 items-center gap-3.5 rounded-[20px] border-2 p-3.5 md:grid-cols-[420px_minmax(0,1fr)] md:gap-8 md:rounded-[24px] md:p-5"
-                >
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src={`/works/${work.slug}/cover.jpg`}
-                    alt={work.title}
-                    className="bg-rule block aspect-[1200/630] w-full rounded-xl object-cover md:rounded-[14px]"
-                  />
-                  <span className="flex flex-col gap-1.5 px-1.5 pb-1.5 md:gap-3 md:px-0 md:pr-4 md:pb-0">
-                    <span className="text-faint text-[12px] font-bold tracking-[0.02em] md:text-[13px]">
-                      {work.date.getUTCFullYear()}
-                    </span>
-                    <span className="text-[19px] leading-[1.4] font-bold tracking-[0.01em] md:text-[24px]">
-                      {work.title}
-                    </span>
-                    <span className="text-soft hidden text-[14px] leading-[1.9] md:block">
-                      {workSummary(work)}
-                    </span>
-                  </span>
+                <Link href={`/works/${work.slug}/`} className="block">
+                  <Card className="grid grid-cols-1 items-center gap-3.5 p-3.5 md:grid-cols-[420px_minmax(0,1fr)] md:gap-8 md:rounded-[24px] md:p-5">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={`/works/${work.slug}/cover.jpg`}
+                      alt={work.title}
+                      className="bg-rule block aspect-[1200/630] w-full rounded-xl object-cover md:rounded-[14px]"
+                    />
+                    <CardContent className="gap-1.5 px-1.5 pb-1.5 md:gap-3 md:px-0 md:pr-4 md:pb-0">
+                      <span className="text-faint text-[12px] font-bold tracking-[0.02em] md:text-[13px]">
+                        {work.date.getUTCFullYear()}
+                      </span>
+                      <CardTitle className="text-[19px] leading-[1.4] md:text-[24px]">
+                        {work.title}
+                      </CardTitle>
+                      <span className="text-soft hidden text-[14px] leading-[1.9] md:block">
+                        {workSummary(work)}
+                      </span>
+                    </CardContent>
+                  </Card>
                 </Link>
               </li>
             ))}

@@ -3,6 +3,9 @@
 import Link from "next/link";
 import { useMemo, useState } from "react";
 
+import { CategoryChip } from "@/components/category-chip";
+import { Card } from "@/components/ui/card";
+import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 import { CATEGORY_LABELS, type Category } from "@/lib/categories";
 
 export type PostRow = {
@@ -14,11 +17,6 @@ export type PostRow = {
 };
 
 type Filter = "all" | Category;
-
-const chipColors: Record<Category, string> = {
-  life: "bg-life",
-  work: "bg-work",
-};
 
 export function PostsIndex({ posts }: { posts: PostRow[] }) {
   const [filter, setFilter] = useState<Filter>("all");
@@ -60,56 +58,51 @@ export function PostsIndex({ posts }: { posts: PostRow[] }) {
           <h1 className="text-[36px] leading-none font-bold tracking-[0.02em] md:text-[48px]">
             Posts
           </h1>
-          <p className="text-[14px] text-muted md:text-[15px]">
+          <p className="text-muted text-[14px] md:text-[15px]">
             これまでに書いた文章です。2017年からの記事を全部置いています。
           </p>
         </div>
-        <div className="flex gap-2 text-[13px] font-bold tracking-[0.02em] md:text-[14px]">
+        <ToggleGroup
+          aria-label="カテゴリで絞り込み"
+          value={[filter]}
+          onValueChange={(value) => {
+            // Single select: clicking the pressed item would otherwise empty
+            // the group, which would show nothing at all.
+            const next = value[0];
+            if (next) setFilter(next as Filter);
+          }}
+        >
           {filters.map((item) => (
-            <button
-              key={item.value}
-              type="button"
-              onClick={() => setFilter(item.value)}
-              aria-pressed={filter === item.value}
-              className={`cursor-pointer rounded-full border-2 border-ink px-3.5 py-2 md:px-4 ${
-                filter === item.value
-                  ? "bg-ink text-paper"
-                  : "bg-card hover:text-accent"
-              }`}
-            >
+            <ToggleGroupItem key={item.value} value={item.value}>
               {item.label}
-            </button>
+            </ToggleGroupItem>
           ))}
-        </div>
+        </ToggleGroup>
       </div>
 
-      <section className="flex flex-col gap-2 rounded-[20px] border-2 border-ink bg-card px-5 pt-2 pb-5 md:rounded-[24px] md:px-8 md:pb-6">
+      <Card className="gap-2 px-5 pt-2 pb-5 md:rounded-[24px] md:px-8 md:pb-6">
         {groups.map(([year, rows]) => (
           <div key={year}>
-            <h2 className="mt-6 text-[20px] font-bold tracking-[0.02em] text-accent md:text-[22px]">
+            <h2 className="text-accent mt-6 text-[20px] font-bold tracking-[0.02em] md:text-[22px]">
               {year}
             </h2>
             <ul className="flex flex-col">
               {rows.map((post) => (
                 <li
                   key={post.slug}
-                  className="group grid grid-cols-1 items-center gap-2 border-b-2 border-dashed border-rule py-4 md:grid-cols-[120px_64px_minmax(0,1fr)] md:gap-5 md:py-[18px]"
+                  className="group border-rule grid grid-cols-1 items-center gap-2 border-b-2 border-dashed py-4 md:grid-cols-[120px_64px_minmax(0,1fr)] md:gap-5 md:py-[18px]"
                 >
                   <span className="flex items-center gap-3 md:contents">
-                    <span className="text-[13px] font-bold tracking-[0.02em] text-faint md:text-[14px]">
+                    <span className="text-faint text-[13px] font-bold tracking-[0.02em] md:text-[14px]">
                       {post.date}
                     </span>
                     <span className="md:justify-self-start">
-                      <span
-                        className={`rounded-full px-2.5 py-1 text-[12px] leading-normal font-medium ${chipColors[post.category]}`}
-                      >
-                        {CATEGORY_LABELS[post.category]}
-                      </span>
+                      <CategoryChip category={post.category} />
                     </span>
                   </span>
                   <Link
                     href={`/posts/${post.slug}/`}
-                    className="text-[17px] leading-[1.5] font-bold tracking-[0.01em] group-hover:text-accent md:text-[18px]"
+                    className="group-hover:text-accent text-[17px] leading-[1.5] font-bold tracking-[0.01em] md:text-[18px]"
                   >
                     {post.title}
                   </Link>
@@ -118,7 +111,7 @@ export function PostsIndex({ posts }: { posts: PostRow[] }) {
             </ul>
           </div>
         ))}
-      </section>
+      </Card>
     </div>
   );
 }
