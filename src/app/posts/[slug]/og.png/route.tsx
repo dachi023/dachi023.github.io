@@ -1,5 +1,5 @@
 import { renderPostOgCard } from "@/components/og-card";
-import { formatDate, getAllPosts, getPost } from "@/lib/content";
+import { getAllPosts, getPost } from "@/lib/content";
 
 export const dynamic = "force-static";
 
@@ -22,7 +22,6 @@ export async function GET(
 
   return renderPostOgCard({
     title: post.title,
-    date: formatDate(post.date),
     category: post.category,
   });
 }
