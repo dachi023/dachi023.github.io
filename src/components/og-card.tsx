@@ -136,7 +136,7 @@ export function renderSiteOgCard() {
 }
 
 /**
- * satori clips rather than shrinks, and three lines is what the space above
+ * satori clips rather than shrinks, and three lines is what the space below
  * the byline holds at the larger size, so a long title is set smaller instead.
  */
 function titleFontSize(title: string): number {
@@ -144,8 +144,9 @@ function titleFontSize(title: string): number {
 }
 
 /**
- * Renders the Open Graph card of one post: the title, and the avatar and the
- * wordmark as a byline. The band along the bottom carries the category.
+ * Renders the Open Graph card of one post: the avatar and the wordmark as a
+ * byline in the top left, and the title below. The band along the bottom
+ * carries the category.
  */
 export async function renderPostOgCard({
   title,
@@ -160,7 +161,12 @@ export async function renderPostOgCard({
   ]);
 
   return new ImageResponse(
-    <Frame band={CATEGORY_COLORS[category]} padding="72px 88px 64px">
+    <Frame band={CATEGORY_COLORS[category]} padding="64px 88px 72px">
+      <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
+        <Avatar size={72} />
+        <Wordmark fontSize={32} />
+      </div>
+
       <div
         style={{
           flex: 1,
@@ -173,11 +179,6 @@ export async function renderPostOgCard({
         }}
       >
         {title}
-      </div>
-
-      <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
-        <Avatar size={72} />
-        <Wordmark fontSize={32} />
       </div>
     </Frame>,
     {
