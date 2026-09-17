@@ -45,16 +45,20 @@ function avatarDataUrl(): string {
   return avatar;
 }
 
-/** Paper, dots, and the white panel every card is drawn inside. */
+/**
+ * The dotted paper, edge to edge, with a band of colour along the bottom: the
+ * category's on a post, the life yellow on the site card.
+ */
 function Frame({
+  band,
   children,
-  ...panel
+  ...layout
 }: {
+  band: string;
   children: ReactNode;
-  flexDirection?: "row" | "column";
   alignItems?: "center";
   justifyContent?: "center" | "space-between";
-  gap?: number;
+  padding?: string;
 }) {
   return (
     <div
@@ -62,41 +66,36 @@ function Frame({
         width: "100%",
         height: "100%",
         display: "flex",
-        padding: 56,
+        flexDirection: "column",
         background: PAPER,
         backgroundImage: `url(${DOT_TILE})`,
         backgroundRepeat: "repeat",
         backgroundSize: "28px 28px",
+        borderBottom: `24px solid ${band}`,
+        ...layout,
       }}
     >
-      <div
-        style={{
-          flex: 1,
-          display: "flex",
-          padding: 56,
-          background: "#ffffff",
-          border: `6px solid ${INK}`,
-          borderRadius: 40,
-          ...panel,
-        }}
-      >
-        {children}
-      </div>
+      {children}
     </div>
   );
 }
 
+/*
+ * "dachi" has ascenders and no descenders, so a box centred on the em square
+ * looks low. The padding is shifted up by the same share the header logo is.
+ */
 function Wordmark({ fontSize }: { fontSize: number }) {
   return (
     <div
       style={{
         display: "flex",
-        padding: `${Math.round(fontSize * 0.2)}px ${Math.round(fontSize * 0.5)}px`,
+        padding: `${Math.round(fontSize * 0.12)}px ${Math.round(fontSize * 0.5)}px ${Math.round(fontSize * 0.3)}px`,
         borderRadius: 999,
         background: INK,
         color: PAPER,
         fontFamily: "ZenKakuMark",
         fontSize,
+        lineHeight: 1.2,
       }}
     >
       {WORDMARK}
@@ -104,54 +103,46 @@ function Wordmark({ fontSize }: { fontSize: number }) {
   );
 }
 
-/** Renders the Open Graph card of the site itself: the avatar and the name. */
-export async function renderSiteOgCard() {
-  const [markFont, metaFont] = await Promise.all([
-    loadFont(900, WORDMARK),
-    loadFont(500, DOMAIN),
-  ]);
-
-  return new ImageResponse(
-    <Frame alignItems="center" justifyContent="center" gap={64}>
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
-        src={avatarDataUrl()}
-        alt=""
-        width={300}
-        height={300}
-        style={{ borderRadius: 24, border: `6px solid ${INK}` }}
-      />
-      <div style={{ display: "flex", flexDirection: "column", gap: 28 }}>
-        <Wordmark fontSize={72} />
-        <div
-          style={{
-            display: "flex",
-            paddingLeft: 8,
-            fontFamily: "ZenKakuMeta",
-            fontSize: 32,
-            color: FAINT,
-          }}
-        >
-          {DOMAIN}
-        </div>
-      </div>
-    </Frame>,
-    {
-      ...OG_SIZE,
-      fonts: [
-        { name: "ZenKakuMark", data: markFont, weight: 900, style: "normal" },
-        { name: "ZenKakuMeta", data: metaFont, weight: 500, style: "normal" },
-      ],
-    },
+function Avatar({ size, shadow }: { size: number; shadow?: number }) {
+  return (
+    // eslint-disable-next-line @next/next/no-img-element
+    <img
+      src={avatarDataUrl()}
+      alt=""
+      width={size}
+      height={size}
+      style={{
+        borderRadius: Math.round(size * 0.2),
+        border: `${size > 100 ? 6 : 4}px solid ${INK}`,
+        ...(shadow ? { boxShadow: `${shadow}px ${shadow}px 0 ${INK}` } : {}),
+      }}
+    />
   );
 }
 
 /**
- * satori clips rather than shrinks, and three lines is all the panel holds, so
- * a long title is set smaller instead.
+ * Renders the Open Graph card of the site itself: just the avatar. The name is
+ * already in the title of every link preview, so the card does not repeat it.
+ */
+export function renderSiteOgCard() {
+  return new ImageResponse(
+    <Frame
+      band={CATEGORY_COLORS.life}
+      alignItems="center"
+      justifyContent="center"
+    >
+      <Avatar size={300} shadow={14} />
+    </Frame>,
+    OG_SIZE,
+  );
+}
+
+/**
+ * satori clips rather than shrinks, and two lines is what the space between
+ * the rows holds at the larger size, so a long title is set smaller instead.
  */
 function titleFontSize(title: string): number {
-  return title.length > 18 ? 56 : 66;
+  return title.length > 20 ? 68 : 76;
 }
 
 /** Renders the Open Graph card of one post. */
@@ -172,22 +163,18 @@ export async function renderPostOgCard({
   ]);
 
   return new ImageResponse(
-    <Frame flexDirection="column" justifyContent="space-between" gap={40}>
+    <Frame
+      band={CATEGORY_COLORS[category]}
+      justifyContent="space-between"
+      padding="64px 80px"
+    >
       <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src={avatarDataUrl()}
-          alt=""
-          width={72}
-          height={72}
-          style={{ borderRadius: 16, border: `4px solid ${INK}` }}
-        />
-        <Wordmark fontSize={30} />
         <div
           style={{
             display: "flex",
-            padding: "10px 24px",
+            padding: "6px 22px",
             borderRadius: 999,
+            border: `3px solid ${INK}`,
             background: CATEGORY_COLORS[category],
             color: INK,
             fontFamily: "ZenKakuMeta",
@@ -200,7 +187,7 @@ export async function renderPostOgCard({
           style={{
             display: "flex",
             fontFamily: "ZenKakuMeta",
-            fontSize: 26,
+            fontSize: 28,
             color: FAINT,
           }}
         >
@@ -213,8 +200,7 @@ export async function renderPostOgCard({
           display: "flex",
           fontFamily: "ZenKakuTitle",
           fontSize: titleFontSize(title),
-          lineHeight: 1.4,
-          letterSpacing: "0.01em",
+          lineHeight: 1.35,
           color: INK,
         }}
       >
@@ -224,12 +210,24 @@ export async function renderPostOgCard({
       <div
         style={{
           display: "flex",
-          fontFamily: "ZenKakuMeta",
-          fontSize: 26,
-          color: FAINT,
+          alignItems: "center",
+          justifyContent: "space-between",
         }}
       >
-        {DOMAIN}
+        <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
+          <Avatar size={72} />
+          <Wordmark fontSize={32} />
+        </div>
+        <div
+          style={{
+            display: "flex",
+            fontFamily: "ZenKakuMeta",
+            fontSize: 28,
+            color: FAINT,
+          }}
+        >
+          {DOMAIN}
+        </div>
       </div>
     </Frame>,
     {
