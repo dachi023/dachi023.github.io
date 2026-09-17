@@ -20,11 +20,11 @@ export function SiteHeader() {
   const pathname = usePathname();
 
   return (
-    <header className="mx-auto flex w-full max-w-[1040px] items-center justify-between px-5 pt-5 md:px-10 md:pt-8">
+    <header className="mx-auto flex w-full max-w-5xl items-center justify-between px-5 pt-5 md:px-10 md:pt-8">
       <Link
         href="/"
         aria-current={pathname === "/" ? "page" : undefined}
-        className="bg-ink text-paper inline-flex h-10 items-center rounded-full px-4 text-[20px] leading-none font-black tracking-[0.02em] md:h-11 md:px-5 md:text-[26px]"
+        className="bg-ink text-paper inline-flex h-9 items-center rounded-full px-3.5 pb-1 text-lg leading-none font-black md:h-10 md:px-4 md:pb-1.5 md:text-2xl"
       >
         dachi
       </Link>
