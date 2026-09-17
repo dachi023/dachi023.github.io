@@ -110,7 +110,7 @@ export default function Home() {
           <h2 className="text-[26px] font-bold tracking-[0.02em] md:text-[30px]">
             Career
           </h2>
-          <Card className="gap-5 p-6 md:flex-row md:gap-8 md:p-8">
+          <Card className="gap-5 p-6 md:gap-8 md:p-8">
             <ul className="flex flex-1 flex-col gap-4">
               {career.map((item) => (
                 <li key={item.company} className="flex gap-3">
@@ -128,7 +128,7 @@ export default function Home() {
                 </li>
               ))}
             </ul>
-            <div className="border-rule flex flex-1 flex-col gap-3 border-t-2 border-dashed pt-5 md:border-t-0 md:border-l-2 md:pt-0 md:pl-8">
+            <div className="border-rule flex flex-1 flex-col gap-3 border-t-2 border-dashed pt-5">
               <h3 className="text-[17px] font-bold tracking-[0.01em]">著書</h3>
               <p className="linky text-soft text-[14px] leading-[1.9]">
                 2020年に{" "}
