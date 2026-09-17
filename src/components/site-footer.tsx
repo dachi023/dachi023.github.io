@@ -8,9 +8,9 @@ import { socialLinks } from "@/lib/site";
  */
 export function SiteFooter() {
   return (
-    <footer className="mx-auto mt-auto flex w-full max-w-[1040px] flex-col gap-5 px-5 pt-10 md:px-10 md:pt-14">
+    <footer className="mx-auto mt-auto flex w-full max-w-5xl flex-col gap-5 px-5 pt-10 md:px-10 md:pt-14">
       <div className="border-rule flex flex-col gap-5 border-t-2 border-dashed pt-8 md:flex-row md:items-center md:justify-between md:gap-8">
-        <span className="text-muted text-[12px] md:text-[13px]">
+        <span className="text-muted text-xs">
           連絡はXのDMからお願いします。
         </span>
         <nav aria-label="ソーシャル" className="flex flex-wrap gap-2">
@@ -27,7 +27,7 @@ export function SiteFooter() {
           ))}
         </nav>
       </div>
-      <span className="text-muted text-[12px] font-bold tracking-[0.02em] md:text-[13px]">
+      <span className="text-muted text-xs font-bold tracking-wide">
         © dachi
       </span>
     </footer>

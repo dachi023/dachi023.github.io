@@ -14,7 +14,7 @@ export function SiteShell({
   return (
     <div
       className={cn(
-        "bg-paper relative flex min-h-screen flex-col pb-14 md:pb-[72px]",
+        "bg-paper relative flex min-h-screen flex-col pb-12 md:pb-16",
         dots && "dot-grid",
       )}
     >
@@ -25,14 +25,14 @@ export function SiteShell({
       */}
       <a
         href="#main"
-        className="border-ink bg-card absolute top-3 left-3 z-50 -translate-y-24 rounded-full border-2 px-4 py-2.5 text-[14px] font-bold tracking-[0.02em] focus:translate-y-0"
+        className="border-ink bg-card absolute top-3 left-3 z-50 -translate-y-24 rounded-full border-2 px-4 py-2.5 text-sm font-bold tracking-wide focus:translate-y-0"
       >
         本文へ移動
       </a>
       <SiteHeader />
       <main
         id="main"
-        className="mx-auto mt-12 w-full max-w-[1040px] px-5 md:mt-[72px] md:px-10"
+        className="mx-auto mt-10 w-full max-w-5xl px-5 md:mt-16 md:px-10"
       >
         {children}
       </main>
