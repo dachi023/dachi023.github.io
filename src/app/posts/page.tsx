@@ -3,17 +3,17 @@ import { Suspense } from "react";
 
 import { SiteShell } from "@/components/site-shell";
 import { formatDate, getAllPosts, getYear } from "@/lib/content";
+import { siteDescription } from "@/lib/site";
 
 import { PostsIndex, PostsIndexFallback, type PostRow } from "./posts-index";
 
 export const metadata: Metadata = {
   title: "Posts",
-  description: "これまでに書いた文章です。2017年からの記事を全部置いています。",
+  description: siteDescription,
   alternates: { canonical: "/posts/" },
   openGraph: {
     title: "Posts | dachi",
-    description:
-      "これまでに書いた文章です。2017年からの記事を全部置いています。",
+    description: siteDescription,
     url: "/posts/",
   },
 };

@@ -138,14 +138,9 @@ function PostsIndexView({
   return (
     <div className="flex flex-col gap-6 md:gap-10">
       <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between md:gap-6">
-        <div className="flex flex-col gap-2.5">
-          <h1 className="text-[36px] leading-none font-bold tracking-[0.02em] md:text-[48px]">
-            Posts
-          </h1>
-          <p className="text-muted text-[14px] md:text-[15px]">
-            これまでに書いた文章です。2017年からの記事を全部置いています。
-          </p>
-        </div>
+        <h1 className="text-[36px] leading-none font-bold tracking-[0.02em] md:text-[48px]">
+          Posts
+        </h1>
         <ToggleGroup
           aria-label="カテゴリで絞り込み"
           value={[filter]}

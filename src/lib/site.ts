@@ -2,8 +2,7 @@ export const siteUrl = "https://www.dachi.one";
 
 export const siteName = "dachi";
 
-export const siteDescription =
-  "Ryo Adachi (dachi023) の個人サイト。ウェブ開発と技術広報のことを書いています。";
+export const siteDescription = "dachi / dachi023 / Ryo Adachi";
 
 export const socialLinks = [
   { label: "Bluesky", href: "https://bsky.app/profile/dachi.one" },
