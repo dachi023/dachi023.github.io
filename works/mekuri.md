@@ -28,3 +28,4 @@ date: 2026-09-18
 同期はDurable ObjectsのWebSocketで行い、接続が切れた場合はポーリングにフォールバックします。
 
 ![Architecture diagram](/works/mekuri/architecture-diagram.png)
+<small style="display: block; text-align: right;">Icons: [Cloudflare](https://github.com/cloudflare/cloudflare-docs) (CC BY 4.0), [Simple Icons](https://simpleicons.org) (CC0), [Lucide](https://lucide.dev) (ISC)</small>

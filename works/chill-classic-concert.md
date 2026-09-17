@@ -28,3 +28,4 @@ Sanityでコンテンツを公開するとwebhookでGitHub Actionsのワーク�
 スキーマの変更に伴うデータ移行がある場合は、移行を適用してからビルドするよう、ワークフローの中で順序を揃えています。
 
 ![Architecture diagram](/works/chill-classic-concert/architecture-diagram.png)
+<small style="display: block; text-align: right;">Icons: [Cloudflare](https://github.com/cloudflare/cloudflare-docs) (CC BY 4.0), [Simple Icons](https://simpleicons.org) (CC0), [Lucide](https://lucide.dev) (ISC)</small>
