@@ -1,4 +1,4 @@
-import { renderOgCard } from "@/components/og-card";
+import { renderPostOgCard } from "@/components/og-card";
 import { formatDate, getAllPosts, getPost } from "@/lib/content";
 
 export const dynamic = "force-static";
@@ -20,9 +20,9 @@ export async function GET(
     return new Response("Not found", { status: 404 });
   }
 
-  return renderOgCard({
+  return renderPostOgCard({
     title: post.title,
-    meta: formatDate(post.date),
+    date: formatDate(post.date),
     category: post.category,
   });
 }
