@@ -17,8 +17,9 @@ const toggleVariants = cva(
       variant: {
         pill: "border-ink bg-card hover:text-accent aria-pressed:bg-ink aria-pressed:text-paper aria-pressed:hover:text-paper inline-flex items-center justify-center rounded-full border-2 font-bold tracking-[0.02em]",
       },
+      /* Same pill metrics as `button.tsx`, so the filters line up with the nav. */
       size: {
-        sm: "px-3.5 py-2 text-[13px] md:px-4 md:text-[14px]",
+        sm: "h-10 min-w-12 px-3.5 text-[13px] md:h-9 md:px-4 md:text-[14px]",
       },
     },
     defaultVariants: {

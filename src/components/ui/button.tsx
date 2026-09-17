@@ -27,10 +27,17 @@ const buttonVariants = cva(
           "border-ink bg-life hover:text-accent inline-flex items-center justify-center rounded-full border-2 font-bold tracking-[0.02em]",
         link: "text-accent font-bold tracking-[0.02em]",
       },
+      /*
+       * Pill heights are set explicitly rather than through vertical padding:
+       * the body line-height of 2 makes a padded pill far taller than the
+       * design wants. 40px on touch screens, 36px from `md` up.
+       *
+       * `min-w-12` keeps a one letter label such as "X" wider than it is tall.
+       */
       size: {
-        sm: "px-3.5 py-2 text-[13px] md:px-4 md:text-[14px]",
-        nav: "px-3.5 py-2 text-[13px] md:px-[18px] md:py-2.5 md:text-[15px]",
-        lg: "px-4 py-2.5 text-[14px] md:px-[18px] md:text-[15px]",
+        sm: "h-10 min-w-12 px-3.5 text-[13px] md:h-9 md:px-4 md:text-[14px]",
+        nav: "h-10 min-w-12 px-3.5 text-[13px] md:h-9 md:px-[18px] md:text-[15px]",
+        lg: "h-10 px-4 text-[14px] md:h-9 md:px-[18px] md:text-[15px]",
         text: "text-[14px] md:text-[15px]",
       },
     },
