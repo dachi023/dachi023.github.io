@@ -3,13 +3,8 @@ import Link from "next/link";
 import { CategoryChip } from "@/components/category-chip";
 import { SiteShell } from "@/components/site-shell";
 import { buttonVariants } from "@/components/ui/button";
-import { Card, CardContent, CardFooter, CardTitle } from "@/components/ui/card";
-import {
-  formatDate,
-  getAllPosts,
-  getAllWorks,
-  workSummary,
-} from "@/lib/content";
+import { Card, CardFooter, CardTitle } from "@/components/ui/card";
+import { formatDate, getAllPosts, getAllWorks } from "@/lib/content";
 
 const career = [
   {
@@ -77,28 +72,17 @@ export default function Home() {
           <h2 className="text-[26px] font-bold tracking-[0.02em] md:text-[30px]">
             Works
           </h2>
-          <ul className="flex flex-col gap-5">
+          <ul className="grid grid-cols-1 gap-3 md:grid-cols-2 md:gap-5">
             {works.map((work) => (
               <li key={work.slug} className="hover-lift">
                 <Link href={`/works/${work.slug}/`} className="block">
-                  <Card className="grid grid-cols-1 items-center gap-3.5 p-3.5 md:grid-cols-[420px_minmax(0,1fr)] md:gap-8 md:rounded-[24px] md:p-5">
+                  <Card className="p-3.5 md:p-4">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
                       src={`/works/${work.slug}/cover.jpg`}
                       alt={work.title}
                       className="bg-rule block aspect-[1200/630] w-full rounded-xl object-cover md:rounded-[14px]"
                     />
-                    <CardContent className="gap-1.5 px-1.5 pb-1.5 md:gap-3 md:px-0 md:pr-4 md:pb-0">
-                      <span className="text-faint text-[12px] font-bold tracking-[0.02em] md:text-[13px]">
-                        {work.date.getUTCFullYear()}
-                      </span>
-                      <CardTitle className="text-[19px] leading-[1.4] md:text-[24px]">
-                        {work.title}
-                      </CardTitle>
-                      <span className="text-soft hidden text-[14px] leading-[1.9] md:block">
-                        {workSummary(work)}
-                      </span>
-                    </CardContent>
                   </Card>
                 </Link>
               </li>
