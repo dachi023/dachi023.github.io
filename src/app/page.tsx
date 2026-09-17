@@ -36,6 +36,7 @@ export default function Home() {
   return (
     <SiteShell dots>
       <div className="flex flex-col gap-12 md:gap-[72px]">
+        <h1 className="sr-only">dachi</h1>
         <section className="flex flex-col gap-4 md:gap-6">
           <div className="flex items-baseline justify-between">
             <h2 className="text-[26px] font-bold tracking-[0.02em] md:text-[30px]">
