@@ -12,18 +12,19 @@ date: 2024-10-04
 
 ## 技術スタック
 
-- Next.js (App Router)
-- TailwindCSS
+- Next.js (Pages Router)
+- Tailwind CSS
 
 ## システム構成
 
 - Cloudflare Pages
-- Contentful
+- Sanity
+- GitHub Actions
 
-Next.jsのStatic Exportsを使用してCloudflare Pagesにデプロイしています。
+Next.jsのStatic Exportsで生成したファイルを、GitHub ActionsからCloudflare Pagesにデプロイしています。
 
-Contentfulのデータが更新されるとDeploy Hookが呼ばれるようになっていて、Cloudflare上でデプロイ処理が自動実行されます。
+Sanityでコンテンツを公開するとwebhookでGitHub Actionsのワークフローが起動し、ビルドとデプロイが自動で実行されます。
 <br />
-ほぼリアルタイムで更新後データをサイトに反映、キャッシュ不要でContentful APIへのリクエスト回数を削減しています。
+スキーマの変更に伴うデータ移行がある場合は、移行を適用してからビルドするよう、ワークフローの中で順序を揃えています。
 
 ![Architecture diagram](/works/chill-classic-concert/architecture-diagram.png)
