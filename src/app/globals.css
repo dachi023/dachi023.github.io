@@ -253,10 +253,16 @@
   border-bottom-color: var(--color-accent);
 }
 
+/*
+ * `width: auto` keeps an image narrower than the column at its natural size
+ * instead of upscaling it; `max-width: 100%` still shrinks the wide ones.
+ */
 .prose img {
   display: block;
-  width: 100%;
+  max-width: 100%;
+  width: auto;
   height: auto;
+  margin-inline: auto;
   border-radius: 16px;
   border: 2px solid var(--color-ink);
   background: var(--color-card);
