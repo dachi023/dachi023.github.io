@@ -138,7 +138,7 @@ function PostsIndexView({
   return (
     <div className="flex flex-col gap-6 md:gap-10">
       <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between md:gap-6">
-        <h1 className="text-[36px] leading-none font-bold tracking-[0.02em] md:text-[48px]">
+        <h1 className="text-3xl leading-none font-bold tracking-wide md:text-4xl">
           Posts
         </h1>
         <ToggleGroup
@@ -159,29 +159,29 @@ function PostsIndexView({
         </ToggleGroup>
       </div>
 
-      <Card className="gap-2 px-5 pt-2 pb-5 md:rounded-[24px] md:px-8 md:pb-6">
+      <Card className="gap-2 px-5 pt-2 pb-5 md:rounded-3xl md:px-8 md:pb-6">
         {groups.map(([year, yearRows]) => (
           <div key={year}>
-            <h2 className="text-accent mt-6 text-[20px] font-bold tracking-[0.02em] md:text-[22px]">
+            <h2 className="text-accent mt-6 text-lg font-bold tracking-wide md:text-xl">
               {year}
             </h2>
             <ul className="flex flex-col">
               {yearRows.map((post) => (
                 <li
                   key={post.slug}
-                  className="group border-rule grid grid-cols-1 items-center gap-2 border-b-2 border-dashed py-4 md:grid-cols-[120px_64px_minmax(0,1fr)] md:gap-5 md:py-[18px]"
+                  className="group border-rule flex flex-col gap-2 border-b-2 border-dashed py-4 md:flex-row md:items-center md:gap-5 md:py-4.5"
                 >
                   <span className="flex items-center gap-3 md:contents">
-                    <span className="text-faint text-[13px] font-bold tracking-[0.02em] md:text-[14px]">
+                    <span className="text-faint text-xs font-bold tracking-wide md:w-24 md:shrink-0 md:text-sm">
                       {post.date}
                     </span>
-                    <span className="md:justify-self-start">
+                    <span className="md:w-12 md:shrink-0">
                       <CategoryChip category={post.category} />
                     </span>
                   </span>
                   <Link
                     href={`/posts/${post.slug}/`}
-                    className="group-hover:text-accent text-[17px] leading-[1.5] font-bold tracking-[0.01em] md:text-[18px]"
+                    className="group-hover:text-accent min-w-0 text-base leading-normal font-bold"
                   >
                     {post.title}
                   </Link>
@@ -230,7 +230,7 @@ function PostsIndexView({
               </PaginationItem>
             </PaginationContent>
           </Pagination>
-          <p className="text-faint text-[12px] font-bold tracking-[0.02em] md:text-[13px]">
+          <p className="text-faint text-xs font-bold tracking-wide">
             {start + 1}–{start + rows.length} / {visible.length}
           </p>
         </div>

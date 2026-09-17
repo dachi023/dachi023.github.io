@@ -23,7 +23,7 @@ function CardTitle({ className, ...props }: ComponentProps<"div">) {
   return (
     <div
       data-slot="card-title"
-      className={cn("font-bold tracking-[0.01em]", className)}
+      className={cn("font-bold", className)}
       {...props}
     />
   );

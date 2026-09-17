@@ -68,15 +68,15 @@ export default async function WorkPage({
 
   return (
     <SiteShell>
-      <article className="mx-auto flex w-full max-w-[820px] flex-col gap-7 md:gap-10">
-        <header className="flex flex-col gap-3.5 md:gap-[18px]">
+      <article className="mx-auto flex w-full max-w-3xl flex-col gap-7 md:gap-10">
+        <header className="flex flex-col gap-3 md:gap-4">
           <div className="flex items-center gap-2.5 md:gap-3">
             <Badge variant="ink">Works</Badge>
-            <span className="text-faint text-[13px] font-bold tracking-[0.02em] md:text-[14px]">
+            <span className="text-faint text-xs font-bold tracking-wide md:text-sm">
               {formatDate(work.date)}
             </span>
           </div>
-          <h1 className="text-[28px] leading-[1.4] font-bold tracking-[0.01em] text-pretty md:text-[40px] md:leading-[1.35]">
+          <h1 className="text-2xl leading-snug font-bold text-pretty md:text-3xl">
             {work.title}
           </h1>
         </header>

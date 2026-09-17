@@ -20,12 +20,12 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        pill: "border-ink bg-card hover:text-accent inline-flex items-center justify-center rounded-full border-2 font-bold tracking-[0.02em]",
+        pill: "border-ink bg-card hover:text-accent inline-flex items-center justify-center rounded-full border-2 font-bold tracking-wide",
         "pill-fill":
-          "border-ink bg-ink text-paper inline-flex items-center justify-center rounded-full border-2 font-bold tracking-[0.02em]",
+          "border-ink bg-ink text-paper inline-flex items-center justify-center rounded-full border-2 font-bold tracking-wide",
         "pill-life":
-          "border-ink bg-life hover:text-accent inline-flex items-center justify-center rounded-full border-2 font-bold tracking-[0.02em]",
-        link: "text-accent font-bold tracking-[0.02em]",
+          "border-ink bg-life hover:text-accent inline-flex items-center justify-center rounded-full border-2 font-bold tracking-wide",
+        link: "text-accent font-bold tracking-wide",
       },
       /*
        * Pill heights are set explicitly rather than through vertical padding:
@@ -35,10 +35,10 @@ const buttonVariants = cva(
        * `min-w-12` keeps a one letter label such as "X" wider than it is tall.
        */
       size: {
-        sm: "h-10 min-w-12 px-3.5 text-[13px] md:h-9 md:px-4 md:text-[14px]",
-        nav: "h-10 min-w-12 px-3.5 text-[13px] md:h-9 md:px-[18px] md:text-[15px]",
-        lg: "h-10 px-4 text-[14px] md:h-9 md:px-[18px] md:text-[15px]",
-        text: "text-[14px] md:text-[15px]",
+        sm: "h-10 min-w-12 px-3.5 text-xs md:h-9 md:px-4 md:text-sm",
+        nav: "h-10 min-w-12 px-3.5 text-xs md:h-9 md:px-4 md:text-sm",
+        lg: "h-10 px-4 text-sm md:h-9 md:px-4",
+        text: "text-sm",
       },
     },
     defaultVariants: {

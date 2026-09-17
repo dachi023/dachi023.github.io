@@ -11,9 +11,9 @@ import { cn } from "cn";
 const badgeVariants = cva("shrink-0 rounded-full whitespace-nowrap", {
   variants: {
     variant: {
-      life: "bg-life px-2.5 py-1 text-[12px] leading-normal font-medium",
-      work: "bg-work px-2.5 py-1 text-[12px] leading-normal font-medium",
-      ink: "bg-ink text-paper px-3 py-1 text-[12px] font-bold tracking-[0.02em] md:text-[13px]",
+      life: "bg-life px-2.5 py-1 text-xs leading-normal font-medium",
+      work: "bg-work px-2.5 py-1 text-xs leading-normal font-medium",
+      ink: "bg-ink text-paper px-3 py-1 text-xs font-bold tracking-wide",
     },
   },
   defaultVariants: {

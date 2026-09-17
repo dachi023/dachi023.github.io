@@ -89,13 +89,13 @@ function LegacyRedirect({ post }: { post: Post }) {
     <>
       <meta httpEquiv="refresh" content={`0; url=${href}`} />
       <SiteShell>
-        <div className="mx-auto flex w-full max-w-[720px] flex-col items-start gap-5 py-10">
-          <p className="text-[14px] text-muted">
+        <div className="mx-auto flex w-full max-w-2xl flex-col items-start gap-5 py-10">
+          <p className="text-sm text-muted">
             このページは移動しました。自動で移動しない場合は下のリンクからどうぞ。
           </p>
           <Link
             href={href}
-            className="linky text-[20px] leading-[1.5] font-bold tracking-[0.01em] text-accent md:text-[24px]"
+            className="linky text-lg leading-normal font-bold text-accent md:text-xl"
           >
             移動しました: {post.title}
           </Link>
@@ -125,19 +125,19 @@ export default async function PostPage({
 
   return (
     <SiteShell>
-      <article className="mx-auto flex w-full max-w-[720px] flex-col gap-7 md:gap-10">
-        <header className="flex flex-col gap-3.5 md:gap-[18px]">
+      <article className="mx-auto flex w-full max-w-2xl flex-col gap-7 md:gap-10">
+        <header className="flex flex-col gap-3 md:gap-4">
           <div className="flex items-center gap-2.5 md:gap-3">
             <CategoryChip category={post.category} />
-            <span className="text-[13px] font-bold tracking-[0.02em] text-faint md:text-[14px]">
+            <span className="text-xs font-bold tracking-wide text-faint md:text-sm">
               {formatDate(post.date)}
             </span>
           </div>
-          <h1 className="text-[26px] leading-[1.5] font-bold tracking-[0.01em] text-pretty md:text-[38px] md:leading-[1.45]">
+          <h1 className="text-2xl leading-normal font-bold text-pretty md:text-3xl md:leading-snug">
             {post.title}
           </h1>
           {post.description ? (
-            <p className="text-[14px] leading-[1.8] text-muted md:text-[15px]">
+            <p className="text-sm leading-loose text-muted">
               {post.description}
             </p>
           ) : null}
