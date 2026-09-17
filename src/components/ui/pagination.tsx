@@ -67,6 +67,9 @@ function PaginationLink({
  * On the first and the last page the step is drawn as a `<span>` rather than a
  * disabled link: an `<a>` without `href` keeps its place in the tab order while
  * doing nothing, which is worse than not being reachable at all.
+ *
+ * Below `md` the steps show only their arrow, so the row of pills fits on one
+ * line of a phone; `label` keeps the accessible name either way.
  */
 function PaginationStep({
   className,
@@ -85,6 +88,7 @@ function PaginationStep({
       <span
         data-slot={dataSlot}
         aria-disabled="true"
+        aria-label={label}
         className={cn(
           buttonVariants({ variant: "pill", size: "sm" }),
           "pointer-events-none opacity-40",
@@ -119,7 +123,7 @@ function PaginationPrevious({
 }: PaginationStepProps) {
   return (
     <PaginationStep dataSlot="pagination-previous" label={label} {...props}>
-      ← 前へ
+      ←<span className="hidden md:inline">&nbsp;前へ</span>
     </PaginationStep>
   );
 }
@@ -130,7 +134,7 @@ function PaginationNext({
 }: PaginationStepProps) {
   return (
     <PaginationStep dataSlot="pagination-next" label={label} {...props}>
-      次へ →
+      <span className="hidden md:inline">次へ&nbsp;</span>→
     </PaginationStep>
   );
 }
@@ -141,7 +145,7 @@ function PaginationEllipsis({ className, ...props }: ComponentProps<"span">) {
       aria-hidden
       data-slot="pagination-ellipsis"
       className={cn(
-        "text-faint flex h-10 w-6 items-center justify-center text-[14px] font-bold md:h-9",
+        "text-faint flex h-10 w-6 items-center justify-center text-sm font-bold md:h-9",
         className,
       )}
       {...props}
