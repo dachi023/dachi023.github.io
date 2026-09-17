@@ -4,7 +4,7 @@ import path from "node:path";
 import { ImageResponse } from "next/og";
 import type { ReactNode } from "react";
 
-import { CATEGORY_LABELS, type Category } from "@/lib/categories";
+import type { Category } from "@/lib/categories";
 import { loadFont } from "@/lib/og-font";
 
 export const OG_SIZE = { width: 1200, height: 630 };
@@ -12,11 +12,9 @@ export const OG_CONTENT_TYPE = "image/png";
 
 const PAPER = "#fbf6ec";
 const INK = "#2b2622";
-const FAINT = "#8a837b";
 const DOT = "#e8dcc6";
 
 const WORDMARK = "dachi";
-const DOMAIN = "dachi.one";
 
 const CATEGORY_COLORS: Record<Category, string> = {
   life: "#f3c74a",
@@ -138,66 +136,36 @@ export function renderSiteOgCard() {
 }
 
 /**
- * satori clips rather than shrinks, and two lines is what the space between
- * the rows holds at the larger size, so a long title is set smaller instead.
+ * satori clips rather than shrinks, and three lines is what the space above
+ * the byline holds at the larger size, so a long title is set smaller instead.
  */
 function titleFontSize(title: string): number {
-  return title.length > 20 ? 68 : 76;
+  return title.length > 20 ? 72 : 80;
 }
 
-/** Renders the Open Graph card of one post. */
+/**
+ * Renders the Open Graph card of one post: the title, and the avatar and the
+ * wordmark as a byline. The band along the bottom carries the category.
+ */
 export async function renderPostOgCard({
   title,
-  date,
   category,
 }: {
   title: string;
-  date: string;
   category: Category;
 }) {
-  const chip = CATEGORY_LABELS[category];
-  const [titleFont, markFont, metaFont] = await Promise.all([
+  const [titleFont, markFont] = await Promise.all([
     loadFont(700, title),
     loadFont(900, WORDMARK),
-    loadFont(500, `${chip}${date}${DOMAIN}`),
   ]);
 
   return new ImageResponse(
-    <Frame
-      band={CATEGORY_COLORS[category]}
-      justifyContent="space-between"
-      padding="64px 80px"
-    >
-      <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
-        <div
-          style={{
-            display: "flex",
-            padding: "6px 22px",
-            borderRadius: 999,
-            border: `3px solid ${INK}`,
-            background: CATEGORY_COLORS[category],
-            color: INK,
-            fontFamily: "ZenKakuMeta",
-            fontSize: 26,
-          }}
-        >
-          {chip}
-        </div>
-        <div
-          style={{
-            display: "flex",
-            fontFamily: "ZenKakuMeta",
-            fontSize: 28,
-            color: FAINT,
-          }}
-        >
-          {date}
-        </div>
-      </div>
-
+    <Frame band={CATEGORY_COLORS[category]} padding="72px 88px 64px">
       <div
         style={{
+          flex: 1,
           display: "flex",
+          alignItems: "center",
           fontFamily: "ZenKakuTitle",
           fontSize: titleFontSize(title),
           lineHeight: 1.35,
@@ -207,27 +175,9 @@ export async function renderPostOgCard({
         {title}
       </div>
 
-      <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-        }}
-      >
-        <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
-          <Avatar size={72} />
-          <Wordmark fontSize={32} />
-        </div>
-        <div
-          style={{
-            display: "flex",
-            fontFamily: "ZenKakuMeta",
-            fontSize: 28,
-            color: FAINT,
-          }}
-        >
-          {DOMAIN}
-        </div>
+      <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
+        <Avatar size={72} />
+        <Wordmark fontSize={32} />
       </div>
     </Frame>,
     {
@@ -235,7 +185,6 @@ export async function renderPostOgCard({
       fonts: [
         { name: "ZenKakuTitle", data: titleFont, weight: 700, style: "normal" },
         { name: "ZenKakuMark", data: markFont, weight: 900, style: "normal" },
-        { name: "ZenKakuMeta", data: metaFont, weight: 500, style: "normal" },
       ],
     },
   );
