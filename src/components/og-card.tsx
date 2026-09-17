@@ -14,8 +14,6 @@ const PAPER = "#fbf6ec";
 const INK = "#2b2622";
 const DOT = "#e8dcc6";
 
-const WORDMARK = "dachi";
-
 const CATEGORY_COLORS: Record<Category, string> = {
   life: "#f3c74a",
   work: "#b9e3dc",
@@ -78,29 +76,6 @@ function Frame({
   );
 }
 
-/*
- * "dachi" has ascenders and no descenders, so a box centred on the em square
- * looks low. The padding is shifted up by the same share the header logo is.
- */
-function Wordmark({ fontSize }: { fontSize: number }) {
-  return (
-    <div
-      style={{
-        display: "flex",
-        padding: `${Math.round(fontSize * 0.12)}px ${Math.round(fontSize * 0.5)}px ${Math.round(fontSize * 0.3)}px`,
-        borderRadius: 999,
-        background: INK,
-        color: PAPER,
-        fontFamily: "ZenKakuMark",
-        fontSize,
-        lineHeight: 1.2,
-      }}
-    >
-      {WORDMARK}
-    </div>
-  );
-}
-
 function Avatar({ size, shadow }: { size: number; shadow?: number }) {
   return (
     // eslint-disable-next-line @next/next/no-img-element
@@ -136,17 +111,16 @@ export function renderSiteOgCard() {
 }
 
 /**
- * satori clips rather than shrinks, and three lines is what the space below
- * the byline holds at the larger size, so a long title is set smaller instead.
+ * satori clips rather than shrinks, and three lines is what the space above
+ * the avatar holds at the larger size, so a long title is set smaller instead.
  */
 function titleFontSize(title: string): number {
   return title.length > 20 ? 72 : 80;
 }
 
 /**
- * Renders the Open Graph card of one post: the avatar and the wordmark as a
- * byline in the top left, and the title below. The band along the bottom
- * carries the category.
+ * Renders the Open Graph card of one post: the title, with the avatar in the
+ * bottom right. The band along the bottom carries the category.
  */
 export async function renderPostOgCard({
   title,
@@ -155,18 +129,10 @@ export async function renderPostOgCard({
   title: string;
   category: Category;
 }) {
-  const [titleFont, markFont] = await Promise.all([
-    loadFont(700, title),
-    loadFont(900, WORDMARK),
-  ]);
+  const titleFont = await loadFont(700, title);
 
   return new ImageResponse(
-    <Frame band={CATEGORY_COLORS[category]} padding="64px 88px 72px">
-      <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
-        <Avatar size={72} />
-        <Wordmark fontSize={32} />
-      </div>
-
+    <Frame band={CATEGORY_COLORS[category]} padding="72px 88px 56px">
       <div
         style={{
           flex: 1,
@@ -180,12 +146,15 @@ export async function renderPostOgCard({
       >
         {title}
       </div>
+
+      <div style={{ display: "flex", justifyContent: "flex-end" }}>
+        <Avatar size={88} />
+      </div>
     </Frame>,
     {
       ...OG_SIZE,
       fonts: [
         { name: "ZenKakuTitle", data: titleFont, weight: 700, style: "normal" },
-        { name: "ZenKakuMark", data: markFont, weight: 900, style: "normal" },
       ],
     },
   );
